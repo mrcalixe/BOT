@@ -1,6 +1,7 @@
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import random
+import random, json
 import sqlite3 as sql
 # import pymongo as mongo
 
@@ -14,7 +15,7 @@ class State:
 
 class Knowledge_BD:
     def __init__(self, tables = False):
-        self.db = sql.connect('knowledge/db')
+        self.db = sql.connect('Knowledge_DB/db')
         self.id = 0
         if tables:
             cursor = self.db.cursor()
@@ -49,3 +50,24 @@ class Knowledge_BD:
 class Users_DB:
     def __init__(self):
         self.users = {}
+        self.users.clear()
+
+    def check_user(self, user):
+        try:
+            t = self.users[user]
+            return True
+        except KeyError:
+            return False
+
+    def add_user(self, user):
+        self.users[user] = {}
+
+
+def dump_users(users_db, file):
+    with open(file, "w+") as outfile:
+        json.dump(users_db, outfile)
+
+def readback_users(file):
+    with open(file, "r") as outfile:
+        data = json.load(outfile)
+    return data

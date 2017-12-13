@@ -1,0 +1,14 @@
+Módulos do NLTK que são importantes:
+    rslp................ RSLP Stemmer (Removedor de Sufixos da Lingua Portuguesa)
+    machado............. Machado de Assis -- Obra Completa
+    floresta............ Portuguese Treebank
+
+
+Spotipy
+    Biblioteca que permite, através de um programa em Python, pesquisar a biblioteca musical do Spotify.
+    http://spotipy.readthedocs.io/en/latest/
+    Código de teste para pesquisar
+        import spotipy
+        spotify = spotipy.Spotify()
+        results = spotify.search(q='artist:' + name, type='artist')
+        print results
