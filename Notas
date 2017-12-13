@@ -3,6 +3,9 @@ Módulos do NLTK que são importantes:
     machado............. Machado de Assis -- Obra Completa
     floresta............ Portuguese Treebank
 
+Links do NLTK que são importantes:
+    http://www.nltk.org/howto/portuguese_en.html
+
 
 Spotipy
     Biblioteca que permite, através de um programa em Python, pesquisar a biblioteca musical do Spotify.
