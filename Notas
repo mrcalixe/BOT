@@ -9,6 +9,7 @@ Links do NLTK que são importantes:
 
 Spotipy
     Biblioteca que permite, através de um programa em Python, pesquisar a biblioteca musical do Spotify.
+    Exemplos no GitHub https://github.com/plamere/spotipy/tree/master/examples
     http://spotipy.readthedocs.io/en/latest/
     Código de teste para pesquisar
         import spotipy
