@@ -1,0 +1,19 @@
+﻿21/12/2017
+
+Após a reunião de 19/12/2017, propôs-se que fossem utilizadas técnicas de ML para construir um classificador muito simples, binário para começar, para distinguir o grupo nominal do verbal. 
+
+Visto que a tarefa, para começar, parece-me mais difícil, decidi começar por construir um classificador, seguindo o livro da ferramenta NLTK, de género dos nomes Portugueses. Após ter encontrado um documento do IRN(Instituto de Registo Nacional) com todos os nomes que podiam ser registados por novos cidadãos, bem como o seu género, procedi a um parse simples do ficheiro PDF para um ficheiro CSV que pudesse ser importado pelo NLTK no python. Ainda utilizei também um ficheiro já em CSV http://centraldedados.pt/nomes_proprios/ com uma contagem dos nomes utilizados por cidadãos portugueses em 2016, só foi feito um parse simples para retirar um das colunas que contém a contagem, visto que é irrelevante para o problema em questão.
+
+Para poder construir tal classificador, é necessário construir uma função que extrai as chamadas “features”, ou seja, informação importante para a distinção de dados. No caso em questão tais “features” são nomes acabados em “a” são do género feminino, bem como outras.
+
+Para construir o modelo, baralhou-se aleatoriamente a lista dos nomes e utilizaram-se os primeiros 2000 nomes como o “training set” e 200 como o conjunto de erros.
+
+O classificador tem uma precisão de 86%, o que que é bastante bom, mas há um problema, é que o conjunto inicial de nomes, além de conter nomes em Português, contém também nomes que não são de origem portuguesa, o que faz o classificador errar.
+
+Para contornar este problema, pesquisei por uma biblioteca de dicionário para o Python, e deparei-me com a “Enchant”. Assim, implementei no parser que sempre que um nome não pertencer ao dicionário português, este é ignorado.
+Assim, consegue-se um classificador com um precisão de 89%, só com 200 casos de teste. Aumentando o número de casos para o treino do classificador, a precisão mantém-se e o número de erros mantém-se.
+
+Feitos alguns testes, e analisando a forma como estava contruída a função que identificava as “features”, deparei-me que não estava a ser construída da melhor forma. Nomes básicos Portugueses estavam a ser mal classificados, apesar do classificar ter uma alta precisão. Assim, voltei a pensar numa nova forma, passando pela divisão de sílabas.
+Para isto, vai ser necessário construir classes que representem as preposições e coisas parecidas e tentar implementar um algoritmo que efetue a divisão de silabas.
+
+Um caminho a seguir, é o de implementar um algoritmo que permita que o computador compreenda a gramática portuguesa. É necessário modelar este algorítmo. Ou utilizar a forma de construção do corpora do NLTK utilizando a Floresta do projeto Linguateca, e assim criar um classificador baseado no Bosque, pois está completamente revisto por linguístas e utilizar a Selva como conjunto de erros, pois existem alguns excertos parcialmente analisados, e tentar corrigir e adaptar o classificador para conseguir classificar qualquer tipo de texto em português.
