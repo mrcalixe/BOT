@@ -16,3 +16,5 @@ Spotipy
         spotify = spotipy.Spotify()
         results = spotify.search(q='artist:' + name, type='artist')
         print results
+
+http://www.nltk.org/book/ch06.html
