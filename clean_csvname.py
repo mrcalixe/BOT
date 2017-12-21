@@ -5,8 +5,8 @@ import csv, enchant
 
 d = enchant.Dict("pt_PT")
 
-with open('tabula-NomesAdmit.csv', 'r') as csvin, open('nomes-registados-2016.csv', 'r') as csvin2, open('nomes_clean.csv','w+') as csvout:
-    writer = csv.writer(csvout)
+with open('tabula-NomesAdmit.csv', 'r') as csvin, open('nomes-registados-2016.csv', 'r') as csvin2, open('nomes_clean.csv','w') as csvout:
+    writer = csv.writer(csvout, delimiter=',')
     nome_pequeno = 'asdasdasdasdassdassdasdasd'
     m = 0; f = 0
     for row in csv.reader(csvin):
