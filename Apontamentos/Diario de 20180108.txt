@@ -1,0 +1,17 @@
+08 de janeiro de 2017
+
+Após, mais uma vez, rever a função para dividir sílabas, esta está finalmente concluída e a funcionar bem, pelos casos que foram testados.
+Segue as regras que estão no portaldalinguaportuguesa.org.
+
+Adicionei mais dois módulos, lingua_portuguesa e conjugacao_verbal. No primeiro, estou a expor vários componente básicos da gramática portuguesa,
+como por exemplo, pronomes, preposições, etc. No segundo módulo, estou a construir uma conjugação verbal. Para já está feita a conjugação de verbos regulares,
+no presente, pretérito-perfeito e infinitivo-pessoal.
+
+Falta ainda adicionar mais regras de conjugação verbal, bem como alguns verbos irregulares.
+
+O plano para as próximas sessões de traabalho são:
+    seguir o site https://www.flip.pt/FLiP-On-line/Gramatica e modelar, desde o inicio até ao fim a gramática portuguesa. Desde a pontuação,
+ e etc.
+    implementar a divisão gramatical e confrontá-la com a Floresta da Linguateca
+    identificação do grupo nominal e verbal de uma frase
+    identificação de tokens e diversas propriedades que a divisão sintática e morfológica de uma frase traz.

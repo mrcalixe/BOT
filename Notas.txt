@@ -19,6 +19,12 @@ Spotipy
 
 http://www.nltk.org/book/ch06.html
 
+!!!! https://www.flip.pt/FLiP-On-line/Gramatica !!!!
+
 https://www.flip.pt/FLiP-On-line/Gramatica
 
 http://www.portaldalinguaportuguesa.org/index.php?action=syllables&act=list
+
+https://www.flip.pt/language/en-US/FLiP-On-line/Gramatica/Morfologia-Partes-do-discurso/Pronome
+
+https://www.flip.pt/FLiP-On-line/Gramatica/Sintaxe/Regras-gerais-de-concordancia
