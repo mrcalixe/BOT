@@ -28,3 +28,6 @@ http://www.portaldalinguaportuguesa.org/index.php?action=syllables&act=list
 https://www.flip.pt/language/en-US/FLiP-On-line/Gramatica/Morfologia-Partes-do-discurso/Pronome
 
 https://www.flip.pt/FLiP-On-line/Gramatica/Sintaxe/Regras-gerais-de-concordancia
+
+Dicionários do DI-UM
+http://natura.di.uminho.pt/wiki/doku.php?id=dicionarios:main

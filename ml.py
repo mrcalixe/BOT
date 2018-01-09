@@ -228,7 +228,7 @@ def load_nomes():
 nomes = load_nomes()
 
 
-def classificador_genero(nomes, train_size=500, erros_size=300):
+def classificador_genero(nomes, train_size=200, erros_size=300):
     set_size = len(nomes)
     #print(set_size, 'Nomes')
     # Conjuntos de nomes
@@ -240,23 +240,35 @@ def classificador_genero(nomes, train_size=500, erros_size=300):
     devtest_set = [(gender_feature(n), g) for (n, g) in devtest_names if gender_feature(n)]
     test_set = [(gender_feature(n), g) for (n, g) in test_names if gender_feature(n)]
     # Criação do classificador
-    classifier = nltk.NaiveBayesClassifier.train(training_set)
+    classifier_NB = nltk.NaiveBayesClassifier.train(training_set)
+    classifier_DT = nltk.DecisionTreeClassifier(training_set)
     # Criação de uma lista de erros
-    erros = []
+    erros_NB = []
     for (name, tag) in devtest_names:
         a = gender_feature(name)
-        prob = classifier.classify(a)
+        prob = classifier_NB.classify(a)
         if prob != tag:
-            erros.append((tag, prob, name))
+            erros_NB.append((tag, prob, name))
+    erros_DT = []
+    for (name, tag) in devtest_names:
+        a = gender_feature(name)
+        prob = classifier_DT.classify(a)
+        if prob != tag:
+            erros_DT.append((tag, prob, name))
     # Print dos erros do classificador, para encontrar novos padrões, ou casos extremos
     #print('Erros do classificador')
-    erros_pretty_print = ''
-    for (tag, prob, name) in erros:
-        erros_pretty_print = erros_pretty_print + 'Correto: ' + tag + '; Incorreto: ' + prob + '; Nome:' + name + '\n'
-    precisao = nltk.classify.accuracy(classifier, test_set)
+    erros_NB_print = ''
+    for (tag, prob, name) in erros_NB:
+        erros_NB_print = erros_NB_print + 'Correto: ' + tag + '; Incorreto: ' + prob + '; Nome:' + name + '\n'
+    precisao_NB = nltk.classify.accuracy(classifier_NB, test_set)
+
+    #erros_DT_print = ''
+    #for (tag, prob, name) in erros_DT:
+    #    erros_DT_print = erros_DT_print + 'Correto: ' + tag + '; Incorreto: ' + prob + '; Nome:' + name + '\n'
+    precisao_DT = nltk.classify.accuracy(classifier_DT, test_set)
     #features_importantes = classifier.show_most_informative_features(7)
     #print(precisao)
-    return classifier, erros, erros_pretty_print, precisao
+    return classifier_NB, classifier_DT, erros_NB, erros_DT, erros_NB_print, precisao_NB, precisao_DT #erros_DT_print,
 
 
 
