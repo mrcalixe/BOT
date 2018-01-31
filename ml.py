@@ -3,6 +3,7 @@
 
 from nltk.corpus import names
 import csv, random, nltk, enchant
+from freeling_wrapper import *
 
 dic = enchant.Dict("pt_PT")
 
@@ -189,24 +190,6 @@ def div_silabas(p):
     return silabas
 
 
-
-
-def silaba_tonica(s):
-    #Verificar acentos:
-    try:
-        teste = s.encode('ascii')
-    except UnicodeEncodeError as uee:
-        #Tem acentos
-        #Verificar se a última sílaba termina com vogais(s)
-        i = s[len(s) - 1]
-        if len(i) >= 2:
-            if i[-2:len(i)] in ['os', 'as', 'es']:
-                return len(s)-1
-        else:
-            if i[-1] in ['o', 'a', 'e']:
-                return len(s)-1
-
-
 def gender_feature(word):
     s = div_silabas(word)
     features = {}
@@ -224,8 +207,6 @@ def load_nomes():
         nomes = [(row[0], row[1]) for row in csv.reader(csvin)]
         random.shuffle(nomes)
         return nomes
-
-nomes = load_nomes()
 
 
 def classificador_genero(nomes, train_size=200, erros_size=300):
@@ -271,4 +252,12 @@ def classificador_genero(nomes, train_size=200, erros_size=300):
     return classifier_NB, classifier_DT, erros_NB, erros_DT, erros_NB_print, precisao_NB, precisao_DT #erros_DT_print,
 
 
+def PoS(frase):
+    a = tk.tokenize(frase)
+    b = sp.split(a)
+    b = morfo.analyze(b)
+    b = tagger.analyze(b)
 
+
+nomes = load_nomes()
+tk, sp, morfo, tagger = init_freeling("pt")

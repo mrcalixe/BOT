@@ -1,0 +1,28 @@
+19/01/2017
+
+FreeLing compilado, compilado também o warpper para Python, e adicionado a versão instalada no repositório.
+
+O que é o FreeLing:
+    É um módulo que faz a análise morfossintática de frases, utilizando técnicas de ML
+  e analisadores morfológicos (JSpell).
+    É utilizado o Hidden Markov Model em conjunto com o conjunto de treino do Bosque
+  da Linguateca.
+    Existem dicionários em en, pt, e entre outros, mas bastante poderosos.
+
+
+Tokenizer:
+Este módulo do FreeLing transforma texto em vetores de palavras de acordo com regras de "tokenização" definidas.
+Estas regras são expressões regulares, que são testadas no inicio da frase, quando a primeira regra coincide,
+extrai-se o token, apaga-se a string e continua-se o processo.
+As regras estão divididas em 3 secções: Macros, Regexs e Abrviações.
+
+
+TODO Falta ver o que faz o resto.
+
+TODO Modelar as expressões regulares poderosas, que funcionem com as tags.
+
+TODO Tentar criar um analisador léxico de cada palavra numa frase uzando o freeling.
+
+
+
+Página 242 tem o significado das TAGS!

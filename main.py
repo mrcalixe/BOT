@@ -9,7 +9,7 @@ from reg_exps import *
 
 know_db = None
 users_db = None
-current_user = "Unknown"
+current_user = "Desconhecido"
 bot_name = ["Qualquer coisa :)", "Tenta adivinhar ;)"]
 
 
@@ -51,7 +51,7 @@ def first_conversation():
             print("Bem-vindo de volta", n+".")
         else:
             users_db.add_user(n)
-            print("Bem-vindo, caso não saiba ou não tenha reparado eu sou um Bot :)")
+            print("Bem-vindo, eu sou um Bot :)")
 
         global current_user
         current_user = n
@@ -62,6 +62,9 @@ def first_conversation():
 
 
 def f(s):
+
+    #TODO Começar com o tag léxico de cada palavra
+
     if len(s) <= 0:
         return 'Erro em s'
     m = regex_asking_who_sings.match(s)

@@ -1,10 +1,35 @@
 # -*- coding: utf-8 -*-
-import re
 
-# Responder a perguntas:
-#   Quem canta ...?
-regex_asking_who_sings = re.compile("Quem (cantou|canta) (?P<music>[a-zA-Z0-9 ]+)\?")
-#   Foi ... quem cantou ...?
-regex_asking_who_sings2 = re.compile("(Foi|Foram) (o|os|a|as)* (?P<artist>[a-zA-Z0-9 ]+)(quem|que) (cantaram|cantou) (?P<music>[a-zA-Z0-9 ]+)\?")
-#   Quem é ...?
-regex_artist_search = re.compile("Quem é (?P<artist>[a-zA-Z0-9 ]+)\?")
+
+#TODO Modelar as expressões regulares
+'''
+1ª Tentavia - Criar uma string onde se mete as tags como expressão regular, ou seja,
+    RegEx -> adposition:S ; verb:ficar: ; determiner:A ; noun_* ; punctuation:parenthesis:close
+    Faz match -> Onde fica Braga?
+    
+    Ou seja, a RegEx é feita da seguinte forma:
+        Começa com o PoS de cada palavra, seguindo-se do seu valor.
+        Quando o PoS vem com _{+,*} é o mesmo significado do que nas RegEx normais,
+      ou seja, 1 ou mais e 0 ou mais respetivamente.
+        Quando vem, por exemplo, verb:estar: e sem nada à frente, quer dizer
+      que pode ser qualquer conjugação dessee verbo.
+'''
+
+
+Regexs = {}
+
+
+Regexs['pergunta_lugar'] = {'exp' : ['RG', ['VMI*','ficar'], 'NP*', 'Fit']}
+
+
+
+
+
+def match_aux(regex, frase_tagged):
+    return True
+
+
+def match(frase_tagged):
+    for key in Regexs.keys():
+        if match_aux(Regexs[key], frase_tagged):
+            return key
