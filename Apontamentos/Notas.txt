@@ -33,5 +33,6 @@ Dicionários do DI-UM
 http://natura.di.uminho.pt/wiki/doku.php?id=dicionarios:main
 
 FreeLing
+    https://talp-upc.gitbooks.io/freeling-tutorial/content/code/example05.py.html
 
 Sparkle

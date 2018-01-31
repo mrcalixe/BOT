@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-from nltk.tokenize import sent_tokenize, word_tokenize
-from nltk.corpus import floresta
 from aux_functions import *
 from reg_exps import *
+from ml import *
+from web_search import *
 
 
 know_db = None
@@ -31,7 +31,8 @@ def main():
                 s = input(current_user+": ")
                 if s == "sair":
                     break
-                else: print(f(s))
+                else:
+                    print('Bot:',f(s))
         except EOFError and KeyboardInterrupt:
             pass
     except ValueError:
@@ -62,21 +63,15 @@ def first_conversation():
 
 
 def f(s):
-
     #TODO Começar com o tag léxico de cada palavra
 
-    if len(s) <= 0:
-        return 'Erro em s'
-    m = regex_asking_who_sings.match(s)
-    if m:
-        return 'Match 1'
-    m = regex_asking_who_sings2.match(s)
-    if m:
-        return 'Match 2'
-    m = regex_artist_search.match(s)
-    if m:
-        return 'Match 3'
+    tagged = PoS(s)
+    res = match(tagged)
 
-    return 'Desculpa, ainda não sou capaz de processar esse tipo de questões :P'
+    if res == 'pergunta_lugar':
+        nome = get_nome(tagged)
+        return procura_lugar(nome)
+    else:
+        return 'Desculpa, ainda não sou capaz de processar esse tipo de questões :P'
 
 main()

@@ -1,35 +1,53 @@
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
+
+import re
 
 
 #TODO Modelar as expressões regulares
 '''
-1ª Tentavia - Criar uma string onde se mete as tags como expressão regular, ou seja,
-    RegEx -> adposition:S ; verb:ficar: ; determiner:A ; noun_* ; punctuation:parenthesis:close
-    Faz match -> Onde fica Braga?
-    
-    Ou seja, a RegEx é feita da seguinte forma:
-        Começa com o PoS de cada palavra, seguindo-se do seu valor.
-        Quando o PoS vem com _{+,*} é o mesmo significado do que nas RegEx normais,
-      ou seja, 1 ou mais e 0 ou mais respetivamente.
-        Quando vem, por exemplo, verb:estar: e sem nada à frente, quer dizer
-      que pode ser qualquer conjugação dessee verbo.
+Existe um dicionário que contém 
 '''
 
 
 Regexs = {}
 
+qualquer_coisa       = re.compile('.*')
+nome_proprio_geral   = re.compile('NP*')
+pergunta             = re.compile('Fit')
+verbo_indicativo_presente_geral = re.compile('VMIP*')
+adverbio_geral       = re.compile('RG')
 
-Regexs['pergunta_lugar'] = {'exp' : ['RG', ['VMI*','ficar'], 'NP*', 'Fit']}
+verbos_lugar = re.compile('(ficar|estar|situar|localizar)')
+
+Regexs['pergunta_lugar'] = {'exp' : [(qualquer_coisa, adverbio_geral),
+                                     (verbos_lugar,verbo_indicativo_presente_geral),
+                                     (qualquer_coisa, nome_proprio_geral),
+                                     (qualquer_coisa, pergunta)]}
 
 
-
-
-
-def match_aux(regex, frase_tagged):
-    return True
+#TODO definir regras onde se consiga ultrapassar o facto de poder utilizar nomes comuns, pronomes, determinantes e preposições no meio da frase
+# Por exemplo: Onde fica Braga = Onde se situa a cidade de Braga
 
 
 def match(frase_tagged):
     for key in Regexs.keys():
-        if match_aux(Regexs[key], frase_tagged):
+        print("A testar", key)
+        teste = True
+        i = 0
+        exp = (Regexs[key])['exp']
+        while teste and i < len(frase_tagged):
+            if exp[i][1].match(frase_tagged[i][1]):
+                teste = teste and True
+            else:
+                teste = teste and False
+            i += 1
+        if teste:
             return key
+
+
+def get_nome(tagged):
+    for (palavra, tag) in tagged:
+        if nome_proprio_geral.match(tag):
+            return palavra
+    raise ValueError('Não existe nenhum nome próprio na frase.')

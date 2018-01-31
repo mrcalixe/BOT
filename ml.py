@@ -257,7 +257,13 @@ def PoS(frase):
     b = sp.split(a)
     b = morfo.analyze(b)
     b = tagger.analyze(b)
+    b = sense.analyze(b)
+    b = wsd.analyze(b)
+    b = parser.analyze(b)
+    ProcessSentences2(b)
+    print('---------------------------------')
+    return ProcessSentences(b, debug=True)
 
 
-nomes = load_nomes()
-tk, sp, morfo, tagger = init_freeling("pt")
+# nomes = load_nomes()
+tk, sp, morfo, tagger, sense, wsd, parser = init_freeling("pt")
