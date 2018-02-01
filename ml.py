@@ -260,8 +260,6 @@ def PoS(frase):
     b = sense.analyze(b)
     b = wsd.analyze(b)
     b = parser.analyze(b)
-    ProcessSentences2(b)
-    print('---------------------------------')
     return ProcessSentences(b, debug=True)
 
 

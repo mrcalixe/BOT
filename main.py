@@ -9,8 +9,8 @@ from web_search import *
 
 know_db = None
 users_db = None
-current_user = "Desconhecido"
-bot_name = ["Qualquer coisa :)", "Tenta adivinhar ;)"]
+current_user = "Anónimo"
+bot_name = "ALPA"
 
 
 def main():
@@ -26,13 +26,23 @@ def main():
             pass
 
         first_conversation()
+
         try:
             while True:
                 s = input(current_user+": ")
                 if s == "sair":
                     break
+                elif s == 'admin':
+                    print('|-- Admin mode on --|')
+                    while True:
+                        s = input("$ ")
+                        if s=='sair':
+                            print('|-- Admin mode off --|')
+                            break
+                        else:
+                            print(PoS(s))
                 else:
-                    print('Bot:',f(s))
+                    print('ALPA:',f(s))
         except EOFError and KeyboardInterrupt:
             pass
     except ValueError:
@@ -61,17 +71,17 @@ def first_conversation():
 
 
 
-
 def f(s):
-    #TODO Começar com o tag léxico de cada palavra
-
     tagged = PoS(s)
     res = match(tagged)
 
+    return res
+    '''
     if res == 'pergunta_lugar':
         nome = get_nome(tagged)
         return procura_lugar(nome)
     else:
         return 'Desculpa, ainda não sou capaz de processar esse tipo de questões :P'
+    '''
 
 main()

@@ -52,7 +52,7 @@ def init_freeling(lang):
     return tk, sp, morfo, tagger, sen, wsd, parser
 
 def ProcessSentences(ls, debug=False):
-    estado = ""
+    estado = '--------------------------------------------------------------------------------------\n'
     processed = []
     # for each sentence in list
     for s in ls :
@@ -63,13 +63,16 @@ def ProcessSentences(ls, debug=False):
             # print possible analysis in word, output lemma and tag
             estado = estado + "|-- Possível análise: {"
             for a in w :
-                estado = estado + " (" + a.get_lemma() + "," + a.get_tag() + ")"
+                lem, sens = extract_lemma_and_sense(a)
+                estado = estado + " (" + lem + "," + a.get_tag() + "," + sens + ")"
             estado = estado + " }\n"
             #  print analysis selected by the tagger
-            estado = estado + "|-- Análise selecionada: (" + w.get_lemma() + "," + w.get_tag()  + ")\n"
+            lem, sens = extract_lemma_and_sense(w)
+            estado = estado + "|-- Análise selecionada: (" + lem + "," + w.get_tag() + "," + sens + ")\n"
             processed.append((w.get_lemma(), w.get_tag()))
         # sentence separator
-        estado = estado + "\n"
+        #estado = estado + "\n"
+    estado += '--------------------------------------------------------------------------------------'
     if debug:
         print(estado)
         return processed
@@ -80,40 +83,6 @@ def ProcessSentences(ls, debug=False):
 def extract_lemma_and_sense(w) :
    lem = w.get_lemma()
    sens=""
-   if len(w.get_senses())>0 :
-       sens = w.get_senses()[0][0]
+   #if len(w.get_senses())>0 :
+       #sens = str(w.get_senses())
    return lem, sens
-
-
-## -----------------------------------------------
-## Do whatever is needed with analyzed sentences
-## -----------------------------------------------
-def ProcessSentences2(ls):
-    # for each sentence in list
-    for s in ls :
-        # for each predicate in sentence
-        for pred in s.get_predicates() :
-            lsubj=""; ssubj=""; ldobj=""; sdobj=""
-            # for each argument of the predicate
-            for arg in pred :
-                # if the argument is A1, store lemma and synset in ldobj, sdobj
-                if arg.get_role()=="A1" :
-                    (ldobj,sdobj) = extract_lemma_and_sense(s[arg.get_position()])
-                # if the argument is A0, store lemma and synset in lsubj, subj
-                elif arg.get_role()=="A0" :
-                    (lsubj,ssubj) = extract_lemma_and_sense(s[arg.get_position()])
-            # Get tree node corresponding to the word marked as argument head
-            head = s.get_dep_tree().get_node_by_pos(arg.get_position())
-            # check if the node has dependency is "by" in passive structure
-            if lsubj=="by" and head.get_label=="LGS" :
-                # get first (and only) child, and use it as actual subject
-                head = head.get_nth_child(0)
-                (lsubj,ssubj) = extract_lemma_and_sense(head.get_word())
-
-            #if the predicate had both A0 and A1, we found a complete SVO triple. Let's output it.
-            if lsubj!="" and ldobj!="":
-                (lpred,spred) = extract_lemma_and_sense(s[pred.get_position()])
-                print ("SVO : (pred:   " , lpred, "[" + spred + "]")
-                print ("       subject:" , lsubj, "[" + ssubj + "]")
-                print ("       dobject:" , ldobj, "[" + sdobj + "]")
-                print ("      )")
