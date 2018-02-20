@@ -15,6 +15,34 @@ linguagem natural através de uma modelação de Expressões Regulares mais sofi
 + [**Jspell**](http://natura.di.uminho.pt/wiki/doku.php?id=ferramentas:jspell)
 + [**Wikipedia**](https://wikipedia.readthedocs.io/en/latest/quickstart.html)
 
+## Instalação em Windows - WSL, FreeLing, NLTK, 
+1. Instalação do WSL (Windows Subsystem Linux): Abrir uma PowerShell em modo de administrador e executar:
+    ```visual basic
+    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+    ``` 
+2. Depois do computador reiniciar, abrir novamente uma PowerShell em modo de administrador e executar:
+    ```visual basic
+    bash
+    ```
+    E instalar a aplicação Ubuntu da loja Microsoft.
+3. Abrir a aplicação Ubuntu e executar o seguinte comando:
+    ```bash
+    sudo apt update ; sudo apt upgrade ; sudo apt install git python-dev python3-dev python3-pip python-pip gcc g++ build-essential swig
+    sudo pip3 install -U numpy nltk
+    ```
+4. Seguir através deste [**tutorial**](https://gist.github.com/dentechy/de2be62b55cfd234681921d5a8b6be11) como ativar e configurar o SSH no Ubuntu
+5. Abrindo o PyCharm, configurar o interpretador remoto através de SSH.
+6. Importar o projeto através do GitHub.
+7. No Ubuntu navegar até à pasta da API do FreeLing que está no projeto e executar:
+    ```bash
+    autoreconf --install
+    ./configure
+    make
+    sudo make install
+    cd APIs/python3
+    make
+    ```
+
 ## Módulos
 |Módulo              |Descrição
 | ------------------ | ----------------------------------------------------
