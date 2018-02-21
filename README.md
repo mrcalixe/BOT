@@ -15,7 +15,7 @@ linguagem natural através de uma modelação de Expressões Regulares mais sofi
 + [**Jspell**](http://natura.di.uminho.pt/wiki/doku.php?id=ferramentas:jspell)
 + [**Wikipedia**](https://wikipedia.readthedocs.io/en/latest/quickstart.html)
 
-## Instalação em Windows - WSL, FreeLing, NLTK, 
+## Instalação em Windows - WSL, FreeLing, NLTK, PyCharm
 1. Instalação do WSL (Windows Subsystem Linux): Abrir uma PowerShell em modo de administrador e executar:
     ```visual basic
     Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux

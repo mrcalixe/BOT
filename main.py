@@ -10,7 +10,7 @@ from web_search import *
 know_db = None
 users_db = None
 current_user = "Anónimo"
-bot_name = "ALPA"
+bot_name = "Bot"
 
 
 def main():
