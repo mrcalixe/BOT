@@ -42,7 +42,7 @@ def main():
                         else:
                             print(PoS(s))
                 else:
-                    print('ALPA:',f(s))
+                    print(bot_name,':',f(s))
         except EOFError and KeyboardInterrupt:
             pass
     except ValueError:
@@ -73,9 +73,12 @@ def first_conversation():
 
 def f(s):
     tagged = PoS(s)
-    res = match(tagged)
-
-    return res
+    parsed = parse_freeling_analise(tagged)
+    res = match(parsed)
+    if res != []:
+        a = PoS_feature(res)
+    else:
+        return 'Não consegui entender.'
     '''
     if res == 'pergunta_lugar':
         nome = get_nome(tagged)

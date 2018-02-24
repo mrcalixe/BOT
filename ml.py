@@ -2,10 +2,9 @@
 # -*- coding: utf-8 -*-
 
 from nltk.corpus import names
-import csv, random, nltk, enchant
+import csv, random, nltk
 from freeling_wrapper import *
 
-dic = enchant.Dict("pt_PT")
 
 vogais = 'aeiou'
 consoantes = 'qwrtypsdfghjklzxcvbnm'
@@ -252,7 +251,18 @@ def classificador_genero(nomes, train_size=200, erros_size=300):
     return classifier_NB, classifier_DT, erros_NB, erros_DT, erros_NB_print, precisao_NB, precisao_DT #erros_DT_print,
 
 
-def PoS(frase):
+
+def PoS_feature(exps):
+    r'''
+    Função que extraí a(s) features de uma frase analisada e comparada com as RegExs.
+    :return:
+    '''
+    features = {}
+    features['exp'] = exps[0]
+    return features
+
+
+def PoS(frase, debug=False):
     a = tk.tokenize(frase)
     b = sp.split(a)
     b = morfo.analyze(b)
@@ -260,7 +270,9 @@ def PoS(frase):
     b = sense.analyze(b)
     b = wsd.analyze(b)
     b = parser.analyze(b)
-    return ProcessSentences(b, debug=True)
+    return ProcessSentences(b, debug=debug)
+
+
 
 
 # nomes = load_nomes()

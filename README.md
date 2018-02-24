@@ -27,8 +27,8 @@ linguagem natural através de uma modelação de Expressões Regulares mais sofi
     E instalar a aplicação Ubuntu da loja Microsoft.
 3. Abrir a aplicação Ubuntu e executar o seguinte comando:
     ```bash
-    sudo apt update ; sudo apt upgrade ; sudo apt install git python-dev python3-dev python3-pip python-pip gcc g++ build-essential swig
-    sudo pip3 install -U numpy nltk
+    sudo apt update ; sudo apt upgrade ; sudo apt install git python-dev python3-dev python3-pip python-pip gcc g++ build-essential swig python3-enchant
+    sudo pip3 install -U numpy nltk wikipedia
     ```
 4. Seguir através deste [**tutorial**](https://gist.github.com/dentechy/de2be62b55cfd234681921d5a8b6be11) como ativar e configurar o SSH no Ubuntu
 5. Abrindo o PyCharm, configurar o interpretador remoto através de SSH.

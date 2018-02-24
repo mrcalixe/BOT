@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from functools import reduce
-import APIs.FreeLing4.APIs.python.freeling as freeling
+import APIs.FreeLing4.APIs.python3.pyfreeling as freeling
+import pickle
 
 
 def maco_options(lang,lpath) :
@@ -26,29 +27,30 @@ def maco_options(lang,lpath) :
 def init_freeling(lang):
     freeling.util_init_locale("default");
     path_freeling = "/usr/local/share/freeling/"+lang+"/"
-    tk = freeling.tokenizer(path_freeling+"tokenizer.dat")
-    sp = freeling.splitter(path_freeling + "splitter.dat")
-    morfo = freeling.maco(maco_options(lang, path_freeling))
-    morfo.set_active_options(False, # UserMap
-                             True,  # NumbersDetection,
-                             True,  # PunctuationDetection,
-                             True,  # DatesDetection,
-                             True,  # DictionarySearch,
-                             True,  # AffixAnalysis,
-                             False, # CompoundAnalysis,
-                             True,  # RetokContractions,
-                             True,  # MultiwordsDetection,
-                             True,  # NERecognition,
-                             True, # QuantitiesDetection,
-                             True); # ProbabilityAssignment
-    tagger = freeling.hmm_tagger(path_freeling + "tagger.dat", True, 2)
+    try:
+        (tk, sp, morfo, tagger, sen, wsd, tagger) = readback_freeling()
+    except AttributeError and FileNotFoundError:
+        tk = freeling.tokenizer(path_freeling+"tokenizer.dat")
+        sp = freeling.splitter(path_freeling + "splitter.dat")
+        morfo = freeling.maco(maco_options(lang, path_freeling))
+        morfo.set_active_options(False, # UserMap
+                                 True,  # NumbersDetection,
+                                 True,  # PunctuationDetection,
+                                 True,  # DatesDetection,
+                                 True,  # DictionarySearch,
+                                 True,  # AffixAnalysis,
+                                 False, # CompoundAnalysis,
+                                 True,  # RetokContractions,
+                                 True,  # MultiwordsDetection,
+                                 True,  # NERecognition,
+                                 True, # QuantitiesDetection,
+                                 True); # ProbabilityAssignment
+        tagger = freeling.hmm_tagger(path_freeling + "tagger.dat", True, 2)
+        sen = freeling.senses(path_freeling+"senses.dat")
+        wsd = freeling.ukb(path_freeling+"ukb.dat")
+        parser = freeling.dep_treeler(path_freeling+"dep_treeler/dependences.dat")
 
-    sen = freeling.senses(path_freeling+"senses.dat")
-
-    wsd = freeling.ukb(path_freeling+"ukb.dat")
-
-    parser = freeling.dep_treeler(path_freeling+"dep_treeler/dependences.dat")
-
+    #dump_freeling(tk, sp, morfo, tagger, sen, wsd, parser)
     return tk, sp, morfo, tagger, sen, wsd, parser
 
 def ProcessSentences(ls, debug=False):
@@ -86,3 +88,51 @@ def extract_lemma_and_sense(w) :
    #if len(w.get_senses())>0 :
        #sens = str(w.get_senses())
    return lem, sens
+
+
+def dump_freeling(tk, sp, morfo, tagger, sen, wsd, parser):
+    with open('tokenizer.dump', 'wb') as tk_output:
+        pickle.dump(tk, tk_output, pickle.HIGHEST_PROTOCOL)
+
+    with open('sp.dump', 'wb') as sp_output:
+        pickle.dump(sp, sp_output, pickle.HIGHEST_PROTOCOL)
+
+    with open('morfo.dump', 'wb') as morfo_output:
+        pickle.dump(morfo, morfo_output, pickle.HIGHEST_PROTOCOL)
+
+    with open('tagger.dump', 'wb') as tagger_output:
+        pickle.dump(tagger, tagger_output, pickle.HIGHEST_PROTOCOL)
+
+    with open('sen.dump', 'wb') as sen_output:
+        pickle.dump(sen, sen_output, pickle.HIGHEST_PROTOCOL)
+
+    with open('wsd.dump', 'wb') as wsd_output:
+        pickle.dump(wsd, wsd_output, pickle.HIGHEST_PROTOCOL)
+
+    with open('parser.dump', 'wb') as parser_output:
+        pickle.dump(parser, parser_output, pickle.HIGHEST_PROTOCOL)
+
+
+def readback_freeling():
+    with open('tokenizer.dump', 'rb') as tk_input:
+        tk = pickle.load(tk_input)
+
+    with open('sp.dump', 'rb') as sp_input:
+        sp = pickle.load(sp_input)
+
+    with open('morfo.dump', 'rb') as morfo_input:
+        morfo = pickle.load(morfo_input)
+
+    with open('tagger.dump', 'rb') as tagger_input:
+        tagger = pickle.load(tagger_input)
+
+    with open('sen.dump', 'rb') as sen_input:
+        sen = pickle.load(sen_input)
+
+    with open('wsd.dump', 'rb') as wsd_input:
+        wsd = pickle.load(wsd_input)
+
+    with open('parser.dump', 'rb') as parser_input:
+        parser = pickle.load(parser_input)
+
+    return tk, sp, morfo, tagger, sen, wsd, parser

@@ -14,61 +14,86 @@ Regexs = {}
 
 
 #Nomes
-nome_geral                      = re.compile('N*')
-nome_proprio_geral              = re.compile('NP*')
-nome_comum_geral                = re.compile('NC*')
+nome_geral                      = r'N\w*'
+nome_proprio_geral              = r'NP\w*'
+nome_comum_geral                = r'NC\w*'
 
 
 #Verbos
-verbo_geral                     = re.compile('V*')
-verbo_indicativo_presente_geral = re.compile('VMIP*')
+verbo_geral                     = r'V\w*'
+verbo_indicativo_presente_geral = r'VMIP\w*'
 
 
 #Advérbios
-adverbio_geral                  = re.compile('RG')
+adverbio_geral                  = r'RG'
 
 
 #Pronomes
-pronome_geral                   = re.compile('P*')
-pronome_pessoal_geral           = re.compile('PP*')
+pronome_geral                   = r'P\w*'
+pronome_pessoal_geral           = r'PP\w*'
 
 
 #Determinantes
-determinante_geral              = re.compile('D*')
-determinante_artigo_geral       = re.compile('DA*')
+determinante_geral              = r'D\w*'
+determinante_artigo_geral       = r'DA\w*'
 
 
 #Pontuação
-pergunta                        = re.compile('Fit')
+pergunta                        = r'Fit'
 
 
 #Expressões gerais
-qualquer_coisa                  = re.compile('.*')
-
-verbos_lugar = re.compile('(ficar|estar|situar|localizar)')
+qualquer_palavra                = r'\w+'
+relax                           = r'relax'
+verbos_lugar = (r'(ficar|estar|situar|localizar)')
 
 
 Regexs['pergunta_lugar'] = {'exp' : [
-                                (qualquer_coisa, adverbio_geral),
-                                ('relax', pronome_pessoal_geral),
+                                (qualquer_palavra, adverbio_geral),
+                                (relax, pronome_pessoal_geral),
                                 (verbos_lugar,verbo_indicativo_presente_geral),
-                                ('relax', determinante_geral),
-                                (qualquer_coisa, nome_proprio_geral),
-                                (qualquer_coisa, pergunta)
+                                (relax, determinante_geral),
+                                (qualquer_palavra, nome_proprio_geral),
+                                ('?', pergunta)
                                 ]}
 
 
+def compile_regexs():
+    global Regexs
+    for regex in Regexs.keys():
+        exp = Regexs[regex]['exp']
+        s = r''
+        for (word, type) in exp:
+            if word == r'relax':
+                aux = r'(' + type + r'\:' + qualquer_palavra + r'){0,1}\s*'
+            else:
+                aux = r'(' + type + r'\:' + word + r')\s*'
+            s = s + aux
+        Regexs[regex] = re.compile(s)
+    return Regexs
 
-#TODO definir regras onde se consiga ultrapassar o facto de poder utilizar nomes comuns, pronomes, determinantes e preposições no meio da frase.
-# Ou seja, relaxar a expressão regular para aceitar certo tipo de palavras antes e/ou depois dde outro tipo de palavras.
-# Por exemplo: Onde fica Braga = Onde se situa a cidade de Braga
+def parse_freeling_analise(analise):
+    s = r''
+    for (word, tag) in analise:
+        aux = tag + r':' + word + r' '
+        s = s + aux
+    return s[:(len(s))-1]
 
 
 
 
-#TODO modelar o significado das preposições
-# ligam dois termos da frase (palavras ou sintagmas), indicando diversas relações semânticas, desde movimento, a espaço ou tempo, entre outros.
-# Ou seja, sempre que encontramos uma preposição, sabemos que os termos que antecede e sucede estão ligados e têm uma relação
+def match(frase):
+    matched = []
+    for reg_exp in Regexs.keys():
+        res = Regexs[reg_exp].findall(frase)
+        if res != []:
+            matched += [reg_exp]
+    return matched
+
+
+
+
+Regexs = compile_regexs()
 
 
 
@@ -77,41 +102,4 @@ Regexs['pergunta_lugar'] = {'exp' : [
 
 
 
-
 #TODO modelar uma forma de dar sentido à interpretação feita.
-
-#[('onde', 'RG'), ('se', 'PP3CN00'), ('situar', 'VMIP3S0'), ('o', 'DA0FS0'), ('cidade', 'NCFS000'), ('de', 'SP'), ('braga', 'NP00000'), ('?', 'Fit')]
-
-
-
-
-def check_exp(frase, exp):
-    i = 0
-    while i < len(exp):
-        (palavra, tag) = exp[i]
-        (palavra2, tag2) = frase[i]
-        if palavra.match(palavra2) and tag.match(tag2):
-            i += 1
-        elif palavra == 'relax' and tag.match(tag2):
-            i += 1
-        else:
-            break
-    return (i == len(exp))
-
-
-def match(frase_tagged):
-    # Testar todas as expressões
-    selected_regexs = []
-    for key in Regexs.keys():
-        print("A testar", key)
-        exp = (Regexs[key])['exp']
-        if check_exp(frase_tagged, exp):
-            selected_regexs.append(key)
-    return selected_regexs
-
-
-def get_nome(tagged):
-    for (palavra, tag) in tagged:
-        if nome_proprio_geral.match(tag):
-            return palavra
-    raise ValueError('Não existe nenhum nome próprio na frase.')
