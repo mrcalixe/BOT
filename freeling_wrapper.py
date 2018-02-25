@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from functools import reduce
-import APIs.FreeLing4.APIs.python3.pyfreeling as freeling
+import APIs.FreeLing.python3.pyfreeling as freeling
 import pickle
 
 
