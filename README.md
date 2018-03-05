@@ -62,7 +62,39 @@ linguagem natural através de uma modelação de Expressões Regulares mais sofi
 + Knowledge_DB - armazena o ficheiro da base de dados do conhecimento
 + Ideias - contém alguns módulos com ideias de coisas que possam vir a ser úteis
 
-## Tags do FreeLing
+
+## Utilizarção
+
+Correr no terminal em primeiro um servidor FreeLing:
+
+```bash
+    ./freeling_server.py localhost 1234
+```
+
+A sintaxe deste módulo é:
++ Endereço ao qual o servidor vai usar
++ Porta a ser usada pelo servidor
+
+
+Para correr o programa:
+
+```bash
+    ./main localhost 1234
+```
+
+A sintaxe deste módulo é:
++ Endereço ao qual o cliente se vai ligar
++ Porta da ligação
+
+
+## Notas
+
+Mais tarde, implementarei o servidor Freeling num servidor meu 
+para que esteja sempre ligado e qualquer pessoa o possa utilizar
+
+
+
+## Tags (resumidas) do FreeLing
 |Tag |Valor
 |----|----------------------------
 |AO  | Adjectivo Ordinal

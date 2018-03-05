@@ -39,6 +39,7 @@ determinante_artigo_geral       = r'DA\w*'
 
 
 #Pontuação
+pontuacao                       = r'F\w*'
 pergunta                        = r'Fit'
 
 
@@ -56,6 +57,15 @@ Regexs['pergunta_lugar'] = {'exp' : [
                                 (qualquer_palavra, nome_proprio_geral),
                                 ('?', pergunta)
                                 ]}
+
+
+Regexs['nome_proprio'] = {'exp' : [
+                                (relax, qualquer_palavra),
+                                (qualquer_palavra, nome_proprio_geral),
+                                (relax, qualquer_palavra),
+                                (relax, pontuacao)
+                                ]}
+
 
 
 def compile_regexs():

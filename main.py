@@ -5,7 +5,7 @@ from aux_functions import *
 from reg_exps import *
 from ml import *
 from web_search import *
-
+import socket, sys, pickle
 
 know_db = None
 users_db = None
@@ -13,7 +13,11 @@ current_user = "Anónimo"
 bot_name = "Bot"
 
 
-def main():
+def main(args):
+    host = args[1]
+    port = int(args[2])
+    sock = socket.socket()
+    sock.connect((host, port))
     try:
         global know_db
         global users_db
@@ -32,17 +36,8 @@ def main():
                 s = input(current_user+": ")
                 if s == "sair":
                     break
-                elif s == 'admin':
-                    print('|-- Admin mode on --|')
-                    while True:
-                        s = input("$ ")
-                        if s=='sair':
-                            print('|-- Admin mode off --|')
-                            break
-                        else:
-                            print(PoS(s))
                 else:
-                    print(bot_name,':',f(s))
+                    print(bot_name,':',f(s, sock))
         except EOFError and KeyboardInterrupt:
             pass
     except ValueError:
@@ -50,6 +45,7 @@ def main():
     finally:
         know_db.db.close()
         dump_users(users_db.users, "users_db.json")
+        sock.close()
 
 
 
@@ -71,20 +67,23 @@ def first_conversation():
 
 
 
-def f(s):
-    tagged = PoS(s)
+def f(s, sock):
+    print("Socket: A enviar:", s)
+    sock.send(s.encode())
+    rec = sock.recv(1024)
+
+    tagged = pickle.loads(rec)
+    print("Socket: Recebi:", tagged)
+
     parsed = parse_freeling_analise(tagged)
+
     res = match(parsed)
+    print("Expressões:", res)
     if res != []:
-        a = PoS_feature(res)
+        a = feature(res)
+        return a
     else:
         return 'Não consegui entender.'
-    '''
-    if res == 'pergunta_lugar':
-        nome = get_nome(tagged)
-        return procura_lugar(nome)
-    else:
-        return 'Desculpa, ainda não sou capaz de processar esse tipo de questões :P'
-    '''
 
-main()
+if __name__ == '__main__':
+    main(sys.argv)
