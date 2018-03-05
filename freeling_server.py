@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys, socket, pickle
+import multiprocessing as mp
 
 
 import APIs.FreeLing.python3.pyfreeling as freeling
@@ -100,30 +101,39 @@ def PoS(frase, tk, sp, morfo, tagger, sense, wsd, parser, debug=False):
     return ProcessSentences(b, debug=debug)
 
 
+def server(args):
+        tk, sp, morfo, tagger, sense, wsd, parser = init_freeling("pt")
+        host = args[1]
+        port = int(args[2])
+        sock = socket.socket()
+        sock.bind((host, port))
+        sock.listen(10)
 
-def main(args):
-    tk, sp, morfo, tagger, sense, wsd, parser = init_freeling("pt")
-    host = args[1]
-    port = int(args[2])
-    sock = socket.socket()
-    sock.bind((host, port))
-    sock.listen(10)
+        print("Pronto.")
 
-    print("Pronto.")
+        while True:
+            conn, addr = sock.accept()
+            print("Ligado:", str(addr))
+            while True:
+                data = conn.recv(1024).decode()
+                if not data:
+                    break
+                print("Recebi:", str(data))
+                pos = PoS(str(data), tk, sp, morfo, tagger, sense, wsd, parser)
+                print("Enviei:", pos)
+                conn.send(pickle.dumps(pos))
+            conn.close()
+
+
+def main(argv):
+    p1 = mp.Process(target=server, args=(argv,))
+    p1.start()
 
     while True:
-        conn, addr = sock.accept()
-        print("Ligado:", str(addr))
-        while True:
-            data = conn.recv(1024).decode()
-            if not data:
-                break
-            print("Recebi:",str(data))
-            pos = PoS(str(data), tk, sp, morfo, tagger, sense, wsd, parser)
-            print("Enviei:", pos)
-            conn.send(pickle.dumps(pos))
-        conn.close()
-
+        cmd = input()
+        if cmd == "sair":
+            p1.terminate()
+            break
 
 if __name__ == '__main__':
     main(sys.argv)

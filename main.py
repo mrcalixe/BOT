@@ -6,6 +6,7 @@ from reg_exps import *
 from ml import *
 from web_search import *
 import socket, sys, pickle
+from freeling_client import Client
 
 know_db = None
 users_db = None
@@ -14,10 +15,15 @@ bot_name = "Bot"
 
 
 def main(args):
-    host = args[1]
-    port = int(args[2])
-    sock = socket.socket()
-    sock.connect((host, port))
+    if len(args) == 1:
+        host = 'localhost'
+        port = 1234
+    else:
+        host = args[1]
+        port = int(args[2])
+
+    sock = Client(host, port)
+
     try:
         global know_db
         global users_db
@@ -68,13 +74,8 @@ def first_conversation():
 
 
 def f(s, sock):
-    print("Socket: A enviar:", s)
-    sock.send(s.encode())
-    rec = sock.recv(1024)
-
-    tagged = pickle.loads(rec)
-    print("Socket: Recebi:", tagged)
-
+    sock.send(s)
+    tagged = sock.recv()
     parsed = parse_freeling_analise(tagged)
 
     res = match(parsed)

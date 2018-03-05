@@ -14,39 +14,39 @@ Regexs = {}
 
 
 #Nomes
-nome_geral                      = r'N\w*'
-nome_proprio_geral              = r'NP\w*'
-nome_comum_geral                = r'NC\w*'
+nome_geral                      = r'(?P<nome>^N\w+)'
+nome_proprio_geral              = r'(?P<nome_proprio>^NP\w+)'
+nome_comum_geral                = r'(?P<nome_comum>^NC\w+)'
 
 
 #Verbos
-verbo_geral                     = r'V\w*'
-verbo_indicativo_presente_geral = r'VMIP\w*'
+verbo_geral                     = r'^V\w*'
+verbo_indicativo_presente_geral = r'^VMIP\w*'
 
 
 #Advérbios
-adverbio_geral                  = r'RG'
+adverbio_geral                  = r'(?P<adverbio>^RG)'
 
 
 #Pronomes
-pronome_geral                   = r'P\w*'
-pronome_pessoal_geral           = r'PP\w*'
+pronome_geral                   = r'^P\w*'
+pronome_pessoal_geral           = r'^PP\w*'
 
 
 #Determinantes
-determinante_geral              = r'D\w*'
-determinante_artigo_geral       = r'DA\w*'
+determinante_geral              = r'^D\w*'
+determinante_artigo_geral       = r'^DA\w*'
 
 
 #Pontuação
-pontuacao                       = r'F\w*'
-pergunta                        = r'Fit'
+pontuacao                       = r'^F\w*'
+pergunta                        = r'(?P<pergunta>^Fit)'
 
 
 #Expressões gerais
-qualquer_palavra                = r'\w+'
+qualquer_palavra                = r'\w*'
 relax                           = r'relax'
-verbos_lugar = (r'(ficar|estar|situar|localizar)')
+verbos_lugar = (r'(^ficar|^estar|^situar|^localizar)')
 
 
 Regexs['pergunta_lugar'] = {'exp' : [
@@ -59,12 +59,32 @@ Regexs['pergunta_lugar'] = {'exp' : [
                                 ]}
 
 
-Regexs['nome_proprio'] = {'exp' : [
+Regexs['nome_proprio']   = {'exp' : [
                                 (relax, qualquer_palavra),
                                 (qualquer_palavra, nome_proprio_geral),
                                 (relax, qualquer_palavra),
                                 (relax, pontuacao)
                                 ]}
+
+Regexs['nome']           = {'exp' : [
+                                (relax, qualquer_palavra),
+                                (qualquer_palavra, nome_geral),
+                                (relax, qualquer_palavra),
+                                (relax, pontuacao)
+                                ]}
+
+
+Regexs['nome_proprio']   = {'exp' : [
+                                (relax, qualquer_palavra),
+                                (qualquer_palavra, nome_proprio_geral),
+                                (relax, qualquer_palavra),
+                                (relax, pontuacao)
+                                ]}
+
+
+
+#TODO extrair todos os elementos da frase, os tipos (verbo, adverbio, nome) e passar isso à feature extraction com uma ordenação decrescente de maior importância para menor importância
+
 
 
 
@@ -95,8 +115,8 @@ def parse_freeling_analise(analise):
 def match(frase):
     matched = []
     for reg_exp in Regexs.keys():
-        res = Regexs[reg_exp].findall(frase)
-        if res != []:
+        res = Regexs[reg_exp].search(frase)
+        if res:
             matched += [reg_exp]
     return matched
 
