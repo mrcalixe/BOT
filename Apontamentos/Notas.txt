@@ -42,12 +42,6 @@ Sparkle
 
 
 
-
-
-
-
-
-
 Notas reunião 26-02-2018
 Ações e decisões (com classificadores).
 Conjunto de treino
@@ -55,10 +49,5 @@ Conjunto de treino
 
 
 
-
-
-
-
-
-
-
+Adicionar uma forma de, quando detetar só um nome, em vez de uma das expressões regulares tipo pergunta_lugar, perguntar se está a procurar por um lugar,
+ou obter informações tipo da wikipedia

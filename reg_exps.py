@@ -5,80 +5,70 @@ import re
 
 
 #TODO Modelar as expressões regulares
-'''
-Existe um dicionário que contém 
-'''
 
 
 Regexs = {}
 
 
 #Nomes
-nome_geral                      = r'(?P<nome>^N\w+)'
-nome_proprio_geral              = r'(?P<nome_proprio>^NP\w+)'
-nome_comum_geral                = r'(?P<nome_comum>^NC\w+)'
+nome_geral                      = r'N\w+'
+nome_proprio_geral              = r'NP\w+'
+nome_comum_geral                = r'NC\w+'
 
 
 #Verbos
-verbo_geral                     = r'^V\w*'
-verbo_indicativo_presente_geral = r'^VMIP\w*'
+verbo_geral                     = r'V\w*'
+verbo_indicativo_presente_geral = r'VMIP\w*'
 
 
 #Advérbios
-adverbio_geral                  = r'(?P<adverbio>^RG)'
+adverbio_geral                  = r'RG'
 
 
 #Pronomes
-pronome_geral                   = r'^P\w*'
-pronome_pessoal_geral           = r'^PP\w*'
+pronome_geral                   = r'P\w*'
+pronome_pessoal_geral           = r'PP\w*'
 
 
 #Determinantes
-determinante_geral              = r'^D\w*'
-determinante_artigo_geral       = r'^DA\w*'
+determinante_geral              = r'D\w*'
+determinante_artigo_geral       = r'DA\w*'
 
 
 #Pontuação
-pontuacao                       = r'^F\w*'
-pergunta                        = r'(?P<pergunta>^Fit)'
+pontuacao                       = r'F\w*'
+pergunta                        = r'Fit'
 
 
 #Expressões gerais
 qualquer_palavra                = r'\w*'
 relax                           = r'relax'
-verbos_lugar = (r'(^ficar|^estar|^situar|^localizar)')
+verbos_lugar                    = (r'(ficar|estar|situar|localizar)')
 
 
 Regexs['pergunta_lugar'] = {'exp' : [
-                                (qualquer_palavra, adverbio_geral),
-                                (relax, pronome_pessoal_geral),
-                                (verbos_lugar,verbo_indicativo_presente_geral),
-                                (relax, determinante_geral),
-                                (qualquer_palavra, nome_proprio_geral),
-                                ('?', pergunta)
+                                (qualquer_palavra, adverbio_geral, None),
+                                (relax, pronome_pessoal_geral, None),
+                                (verbos_lugar,verbo_indicativo_presente_geral, 'verbo'),
+                                (relax, determinante_geral, None),
+                                (qualquer_palavra, nome_proprio_geral, 'lugar'),
+                                (relax, pergunta, 'pergunta')
                                 ]}
 
 
 Regexs['nome_proprio']   = {'exp' : [
-                                (relax, qualquer_palavra),
-                                (qualquer_palavra, nome_proprio_geral),
-                                (relax, qualquer_palavra),
-                                (relax, pontuacao)
-                                ]}
-
-Regexs['nome']           = {'exp' : [
-                                (relax, qualquer_palavra),
-                                (qualquer_palavra, nome_geral),
-                                (relax, qualquer_palavra),
-                                (relax, pontuacao)
+                                (relax, qualquer_palavra, None),
+                                (qualquer_palavra, nome_proprio_geral, 'nome_proprio'),
+                                (relax, qualquer_palavra, None),
+                                (relax, pontuacao, None)
                                 ]}
 
 
-Regexs['nome_proprio']   = {'exp' : [
-                                (relax, qualquer_palavra),
-                                (qualquer_palavra, nome_proprio_geral),
-                                (relax, qualquer_palavra),
-                                (relax, pontuacao)
+Regexs['nome_comum']     = {'exp' : [
+                                (relax, qualquer_palavra, None),
+                                (qualquer_palavra, nome_comum_geral, 'nome_comum'),
+                                (relax, qualquer_palavra, None),
+                                (relax, pontuacao, None)
                                 ]}
 
 
@@ -93,16 +83,23 @@ def compile_regexs():
     for regex in Regexs.keys():
         exp = Regexs[regex]['exp']
         s = r''
-        for (word, type) in exp:
+        for (word, type, group) in exp:
             if word == r'relax':
-                aux = r'(' + type + r'\:' + qualquer_palavra + r'){0,1}\s*'
+                if group:
+                    aux = r'(' + type + r'\:' + '(?P<'+group+'>' + qualquer_palavra + r')){0,1}\s*'
+                else:
+                    aux = r'(' + type + r'\:' + qualquer_palavra + r'){0,1}\s*'
             else:
-                aux = r'(' + type + r'\:' + word + r')\s*'
+                if group:
+                    aux = r'(' + type + r'\:' + '(?P<' + group + '>' + word + r'))\s*'
+                else:
+                    aux = r'(' + type + r'\:' + word + r')\s*'
             s = s + aux
         Regexs[regex] = re.compile(s)
     return Regexs
 
-def parse_freeling_analise(analise):
+
+def parse_analise(analise):
     s = r''
     for (word, tag) in analise:
         aux = tag + r':' + word + r' '
@@ -110,26 +107,13 @@ def parse_freeling_analise(analise):
     return s[:(len(s))-1]
 
 
-
-
-def match(frase):
-    matched = []
+def verifica(frase):
+    matched = {}
     for reg_exp in Regexs.keys():
         res = Regexs[reg_exp].search(frase)
         if res:
-            matched += [reg_exp]
+            matched[reg_exp] = res.groupdict()
     return matched
 
 
-
-
 Regexs = compile_regexs()
-
-
-
-
-#TODO modelar um estado de sistema. Guardar os objetos usados no FreeLing.
-
-
-
-#TODO modelar uma forma de dar sentido à interpretação feita.

@@ -4,7 +4,7 @@
 from aux_functions import *
 from reg_exps import *
 from ml import *
-from web_search import *
+from wikipedia_wrapper import *
 import socket, sys, pickle
 from freeling_client import Client
 
