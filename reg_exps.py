@@ -52,8 +52,17 @@ Regexs['pergunta_lugar'] = {'exp' : [
                                 (verbos_lugar,verbo_indicativo_presente_geral, 'verbo'),
                                 (relax, determinante_geral, None),
                                 (qualquer_palavra, nome_proprio_geral, 'lugar'),
-                                (relax, pergunta, 'pergunta')
+                                (relax, pergunta, None)
                                 ]}
+
+
+Regexs['pergunta_pessoa'] = {'exp' : [
+                                (qualquer_palavra, pronome_geral, None),
+                                (qualquer_palavra, verbo_geral, "verbo"),
+                                (qualquer_palavra, nome_proprio_geral, "nome"),
+                                (relax, pergunta, None)
+                                ]}
+
 
 
 Regexs['nome_proprio']   = {'exp' : [
@@ -70,6 +79,7 @@ Regexs['nome_comum']     = {'exp' : [
                                 (relax, qualquer_palavra, None),
                                 (relax, pontuacao, None)
                                 ]}
+
 
 
 

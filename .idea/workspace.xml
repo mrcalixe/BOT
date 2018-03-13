@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54094adf-2760-470d-97b4-bf8956ae8712" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Latex/Modelo_Linguistico.tex" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frases_trainjson" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/google_maps_wrapper.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wikipedia_wrapper.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/DB.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/frases_train.json" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Apontamentos/Notas.txt" afterPath="$PROJECT_DIR$/Apontamentos/Notas.txt" />
-      <change beforePath="$PROJECT_DIR$/frases_train.txt" afterPath="$PROJECT_DIR$/Actions.py" />
-      <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change beforePath="$PROJECT_DIR$/Actions.py" afterPath="$PROJECT_DIR$/Actions.py" />
+      <change beforePath="$PROJECT_DIR$/aux_functions.py" afterPath="$PROJECT_DIR$/aux_functions.py" />
+      <change beforePath="$PROJECT_DIR$/frases_trainjson" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/freeling_server.py" afterPath="$PROJECT_DIR$/freeling_server.py" />
       <change beforePath="$PROJECT_DIR$/reg_exps.py" afterPath="$PROJECT_DIR$/reg_exps.py" />
-      <change beforePath="$PROJECT_DIR$/regex_debugger.py" afterPath="$PROJECT_DIR$/regex_debugger.py" />
-      <change beforePath="$PROJECT_DIR$/web_search.py" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,64 +20,69 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="reg_exps.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reg_exps.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reg_exps.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="51" column="35" lean-forward="false" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+            <state relative-caret-position="603">
+              <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="regex_debugger.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/regex_debugger.py">
+      <file leaf-file-name="freeling_server.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/freeling_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+            <state relative-caret-position="577">
+              <caret line="125" column="39" lean-forward="true" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aux_functions.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aux_functions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1362">
+              <caret line="71" column="43" lean-forward="true" selection-start-line="71" selection-start-column="43" selection-end-line="71" selection-end-column="43" />
               <folding>
-                <element signature="e#44#54#0" expanded="true" />
+                <marker date="1520949442903" expanded="true" signature="682:915" ph="CREATE TABLE... music" />
+                <marker date="1520949442903" expanded="true" signature="1000:1136" ph="CREATE TABLE... nomes" />
+                <marker date="1520949442903" expanded="true" signature="1460:1577" ph="INSERT INTO music... " />
+                <marker date="1520949442903" expanded="true" signature="1812:1862" ph="SELECT * FRO... music" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Notas.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Apontamentos/Notas.txt">
+      <file leaf-file-name="DB.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="924">
-              <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+            <state relative-caret-position="483">
+              <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ml.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ml.py">
+      <file leaf-file-name="frases_train.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frases_train.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="frases_trainjson" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frases_trainjson">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Actions.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Actions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Actions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="210">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,7 +90,7 @@
       <file leaf-file-name="google_maps_wrapper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/google_maps_wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="777">
+            <state relative-caret-position="93">
               <caret line="37" column="49" lean-forward="false" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
               <folding />
             </state>
@@ -98,8 +100,8 @@
       <file leaf-file-name="wikipedia_wrapper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wikipedia_wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+            <state relative-caret-position="210">
+              <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -137,18 +139,21 @@
         <option value="$PROJECT_DIR$/Ideias/classificador_genero.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/freeling_client.py" />
-        <option value="$PROJECT_DIR$/freeling_server.py" />
         <option value="$PROJECT_DIR$/ml.py" />
         <option value="$PROJECT_DIR$/Latex/Modelo_Linguistico.tex" />
         <option value="$PROJECT_DIR$/frases_train.txt" />
-        <option value="$PROJECT_DIR$/Actions.py" />
         <option value="$PROJECT_DIR$/web_search.py" />
         <option value="$PROJECT_DIR$/google_maps_wrapper.py" />
         <option value="$PROJECT_DIR$/Apontamentos/Notas.txt" />
-        <option value="$PROJECT_DIR$/reg_exps.py" />
         <option value="$PROJECT_DIR$/wikipedia_wrapper.py" />
         <option value="$PROJECT_DIR$/regex_debugger.py" />
+        <option value="$PROJECT_DIR$/aux_functions.py" />
+        <option value="$PROJECT_DIR$/DB.py" />
         <option value="$PROJECT_DIR$/frases_trainjson" />
+        <option value="$PROJECT_DIR$/freeling_server.py" />
+        <option value="$PROJECT_DIR$/reg_exps.py" />
+        <option value="$PROJECT_DIR$/frases_train.json" />
+        <option value="$PROJECT_DIR$/Actions.py" />
       </list>
     </option>
   </component>
@@ -179,8 +184,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,17 +204,14 @@
             <path>
               <item name="BOT" type="b2602c69:ProjectViewProjectNode" />
               <item name="BOT" type="462c0819:PsiDirectoryNode" />
-              <item name="Knowledge_DB" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BOT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOT" type="462c0819:PsiDirectoryNode" />
               <item name="Latex" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -326,14 +326,23 @@
       <option name="project" value="LOCAL" />
       <updated>1520269734762</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Correção das RegExs.&#10;Adição de um novo campo nas RegExs.&#10;Adição da API Google Maps Places. (A funcionar)&#10;Inicio das ações do sistema (funções que serão escolhidas para responder ao cliente).&#10;Criação de uma pasta que contém todos os LaTex que serão produzidos.">
+      <created>1520871708778</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1520871708778</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32873806" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23958333" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="0" y="0" width="193" height="847" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -350,7 +359,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23958333" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="0" y="0" width="193" height="847" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -376,20 +384,14 @@
     <MESSAGE value="Atualização dos ficheiros que trabalham com o FreeLing (Correção de erros de importação)." />
     <MESSAGE value="Alteração do modo de funcionamento do FreeLing.&#10;Foi criado um servidor FreeLing e um cliente (usando sockets).&#10;Construção do classificador e da função de features extraction.&#10;Criação de algumas expressões regulares novas." />
     <MESSAGE value="Correção e modificação no servidor do freeling.&#10;Alteração das expressões regulares." />
-    <option name="LAST_COMMIT_MESSAGE" value="Correção e modificação no servidor do freeling.&#10;Alteração das expressões regulares." />
+    <MESSAGE value="Correção das RegExs.&#10;Adição de um novo campo nas RegExs.&#10;Adição da API Google Maps Places. (A funcionar)&#10;Inicio das ações do sistema (funções que serão escolhidas para responder ao cliente).&#10;Criação de uma pasta que contém todos os LaTex que serão produzidos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Correção das RegExs.&#10;Adição de um novo campo nas RegExs.&#10;Adição da API Google Maps Places. (A funcionar)&#10;Inicio das ações do sistema (funções que serão escolhidas para responder ao cliente).&#10;Criação de uma pasta que contém todos os LaTex que serão produzidos." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="78" column="28" lean-forward="false" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ml.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5460">
@@ -610,14 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/freeling_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1932">
-          <caret line="138" column="18" lean-forward="false" selection-start-line="138" selection-start-column="18" selection-end-line="138" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -625,13 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aux_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -649,52 +636,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Apontamentos/Notas.txt">
+    <entry file="file://$PROJECT_DIR$/aux_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wikipedia_wrapper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Actions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/regex_debugger.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        <state relative-caret-position="1362">
+          <caret line="71" column="43" lean-forward="true" selection-start-line="71" selection-start-column="43" selection-end-line="71" selection-end-column="43" />
           <folding>
-            <element signature="e#44#54#0" expanded="true" />
+            <marker date="1520949442903" expanded="true" signature="682:915" ph="CREATE TABLE... music" />
+            <marker date="1520949442903" expanded="true" signature="1000:1136" ph="CREATE TABLE... nomes" />
+            <marker date="1520949442903" expanded="true" signature="1460:1577" ph="INSERT INTO music... " />
+            <marker date="1520949442903" expanded="true" signature="1812:1862" ph="SELECT * FRO... music" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/google_maps_wrapper.py">
+    <entry file="file://$PROJECT_DIR$/DB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="37" column="49" lean-forward="false" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+        <state relative-caret-position="483">
+          <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frases_trainjson">
+    <entry file="file://$PROJECT_DIR$/Apontamentos/Notas.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        <state relative-caret-position="876">
+          <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -707,11 +673,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/regex_debugger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding>
+            <element signature="e#44#54#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freeling_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="125" column="39" lean-forward="true" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/reg_exps.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="51" column="35" lean-forward="false" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+        <state relative-caret-position="603">
+          <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wikipedia_wrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/google_maps_wrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="37" column="49" lean-forward="false" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frases_train.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Actions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -28,6 +28,11 @@ class Knowledge_BD:
                                    year INTEGER,
                                    music TEXT)
                                 ''')
+            cursor.execute('''
+                CREATE TABLE nomes(id INTEGER PRIMARY KEY,\
+                                   tipo TEXT,
+                                   acoes TEXT)
+                                ''')
             self.db.commit()
             cursor.close()
 
@@ -55,7 +60,6 @@ class Users_DB:
     # Dicionário que contém os utilizadores que já utilizaram o BOT
     def __init__(self):
         self.users = {}
-        self.users.clear()
 
     # Visto que não existe a função has_key no dicionário, basta tentar aceder à chave e caso haja uma exceção significa que não existe entrada
     def check_user(self, user):
