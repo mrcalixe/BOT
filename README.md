@@ -20,6 +20,8 @@ linguagem natural através de uma modelação de Expressões Regulares mais sofi
     ```visual basic
     Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
     ``` 
+Nota: para abrir um PowerShell em modo administrador, basta carregar no menu iniciar, escrever powershell, clical no lado direito do rato encima da powershell e selecionar executar como administrador.
+
 2. Depois do computador reiniciar, abrir novamente uma PowerShell em modo de administrador e executar:
     ```visual basic
     bash
@@ -35,10 +37,6 @@ linguagem natural através de uma modelação de Expressões Regulares mais sofi
 6. Importar o projeto através do GitHub.
 7. No Ubuntu navegar até à pasta da API do FreeLing que está no projeto e executar:
     ```bash
-    autoreconf --install
-    ./configure
-    make
-    sudo make install
     cd APIs/python3
     make
     ```
