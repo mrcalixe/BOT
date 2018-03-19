@@ -1,0 +1,1 @@
+C:\Users\carlos.a.pereira\Desktop\Python-3.6.3.0Portable\scripts\python.bat -i %*

@@ -51,3 +51,10 @@ Conjunto de treino
 
 Adicionar uma forma de, quando detetar só um nome, em vez de uma das expressões regulares tipo pergunta_lugar, perguntar se está a procurar por um lugar,
 ou obter informações tipo da wikipedia
+
+
+Arranjar maneira de passar vários argumentos para o classificador, para que os possa usar todos, em vez de um só.
+
+Truque. Arranjar um mapeador que, dados vários argumentos, ele consegue mapear tudo num só.
+
+1ª tentativa: Hash.

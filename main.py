@@ -14,6 +14,10 @@ current_user = "Anónimo"
 bot_name = "Bot"
 
 
+#TODO alterar a forma como o BOT inicia ao perguntar o nome.
+#TODO Questionar antes se quer continuar como anonimo.
+
+
 def main(args):
     if len(args) == 1:
         host = 'localhost'
