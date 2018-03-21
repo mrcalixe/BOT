@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
 import json
 
 
@@ -16,8 +19,11 @@ class DB_Frases:
                "keywords" (que keywords são relevantes e o tipo delas) -> keys
     '''
 
-    def __init__(self):
-        self.db = {}
+    def __init__(self, db = None):
+        if db:
+            self.db = db
+        else:
+            self.db = {}
 
     def check_key(self, key):
         try:
@@ -53,8 +59,11 @@ class DB_Keywords:
         Assim, o Bot pode comparar com frases futuras se as mesmas palavras apareceram e obter uma resposta mais acertada.
     '''
 
-    def __init__(self):
-        self.db = {}
+    def __init__(self, db):
+        if db:
+            self.db = db
+        else:
+            self.db = {}
 
     def check_key(self, key):
         try:

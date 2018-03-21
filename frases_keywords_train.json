@@ -1,9 +1,11 @@
 { "treino" : {
 	"Onde fica Braga?" : {"action" : "procura_lugar", "keywords" : ["lugar", "verbo"]},
-	"Quem é Mozart?"   : {"action" : "procura_pessoa", "keywords" : ["nome", "verbo"]}
+	"Quem é Mozart?"   : {"action" : "procura_pessoa", "keywords" : ["nome", "verbo"]},
+	"Onde se situa o Porto?" : {"action" : "procura_lugar", "keywords" : ["lugar", "verbo"]}
 },
   "keywords" : {
   	"Braga" : ["lugar", "cidade"],
+  	"Porto" : ["lugar", "cidade"],
   	"Mozart" : ["pessoa", "músico"]
   }
 }

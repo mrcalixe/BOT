@@ -8,7 +8,7 @@ import multiprocessing as mp
 import APIs.FreeLing.python3.pyfreeling as freeling
 
 
-def maco_options(lang,lpath) :
+def maco_options(lang,lpath, separator) :
 
     # create options holder
     opt = freeling.maco_options(lang);
@@ -21,17 +21,18 @@ def maco_options(lang,lpath) :
     opt.ProbabilityFile = lpath + "probabilitats.dat";
     opt.DictionaryFile = lpath + "dicc.src";
     opt.NPdataFile = lpath + "np.dat";
-    opt.PunctuationFile = lpath + "../common/punct.dat";
-    opt.QuantitiesFile = lpath + "../common/quantities_default.dat"
+    opt.PunctuationFile = lpath + ".." + separator + "common" + separator + "punct.dat";
+    opt.QuantitiesFile = lpath + ".." + separator + "common" + separator + "quantities_default.dat"
     return opt;
 
 
 def init_freeling(lang):
+    separator = '/'
     freeling.util_init_locale("default");
-    path_freeling = "/usr/local/share/freeling/"+lang+"/"
+    path_freeling = "/usr/local/share/freeling/"+lang+separator
     tk = freeling.tokenizer(path_freeling+"tokenizer.dat")
     sp = freeling.splitter(path_freeling + "splitter.dat")
-    morfo = freeling.maco(maco_options(lang, path_freeling))
+    morfo = freeling.maco(maco_options(lang, path_freeling, separator))
     morfo.set_active_options(False, # UserMap
                              True,  # NumbersDetection,
                              True,  # PunctuationDetection,

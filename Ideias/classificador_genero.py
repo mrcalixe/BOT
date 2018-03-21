@@ -197,6 +197,7 @@ def load_nomes():
     with open('nomes_clean.csv') as csvin:
         nomes = [(row[0], row[1]) for row in csv.reader(csvin)]
         random.shuffle(nomes)
+        
         return nomes
 
 

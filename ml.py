@@ -1,21 +1,22 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import csv
-import random
 import nltk
 
 
 
-def feature(exps):
-    r''' Função que extraí a(s) features de uma frase analisada e comparada com as RegExs.
-    :return:
+def features(analise):
+    r'''
+    Função que extraí a(s) features de uma frase analisada e comparada com as RegExs.
+    Recebe o dicionário das análises efetuadas, com as expressões regulares e os respetivos grupos "apanhados"
     '''
-    features = {}
-    return features
+    #features = {} A testar com o dicionário da verificação
+    return analise
 
 
-def classificador():
+def classificador(train):
+    for t in train.keys():
+        print(t)
     training_set = []
     devtest_set = []
     # Criação do classificador
@@ -23,7 +24,7 @@ def classificador():
     # Criação de uma lista de erros
     erros_NB = []
     for (name, tag) in devtest_set:
-        a = feature(name)
+        a = features(name)
         prob = classifier_NB.classify(a)
         if prob != tag:
             erros_NB.append((tag, prob, name))

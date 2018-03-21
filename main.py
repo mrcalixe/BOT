@@ -5,8 +5,9 @@ from aux_functions import *
 from reg_exps import *
 from ml import *
 from wikipedia_wrapper import *
-import socket, sys, pickle
+import sys
 from freeling_client import Client
+import DB as frase_keys_db
 
 know_db = None
 users_db = None
@@ -16,6 +17,28 @@ bot_name = "Bot"
 
 #TODO alterar a forma como o BOT inicia ao perguntar o nome.
 #TODO Questionar antes se quer continuar como anonimo.
+
+
+frases_db = None
+keywords_db = None
+
+
+def init_dbs():
+    global frases_db
+    global keywords_db
+    global know_db
+    global users_db
+    global current_user
+    know_db = Knowledge_BD(tables=False)
+    users_db = Users_DB()
+    try:
+        users_db.users = readback_users("users_db.json")
+        frases, keywords = frase_keys_db.readback("frases_keywords_train.json")
+        frases_db = frase_keys_db.DB_Frases(frases)
+        keywords_db = frase_keys_db.DB_Keywords(keywords)
+    except AttributeError and FileNotFoundError and json.decoder.JSONDecodeError:
+        pass
+
 
 
 def main(args):
@@ -29,18 +52,7 @@ def main(args):
     sock = Client(host, port)
 
     try:
-        global know_db
-        global users_db
-        global current_user
-        know_db = Knowledge_BD(tables=False)
-        users_db = Users_DB()
-        try:
-            users_db.users = readback_users("users_db.json")
-        except AttributeError and FileNotFoundError and json.decoder.JSONDecodeError:
-            pass
-
         first_conversation()
-
         try:
             while True:
                 s = input(current_user+": ")
@@ -60,20 +72,19 @@ def main(args):
 
 
 def first_conversation():
-    # Ask user name
-    print("Olá! Qual é o seu nome?")
-    try:
-        n = input()
-        if users_db.check_user(n):
-            print("Bem-vindo de volta", n+".")
-        else:
-            users_db.add_user(n)
-            print("Bem-vindo, eu sou um Bot :)")
+    # Perguntar se quer continuar anonimo ou com utilizador normal
 
-        global current_user
-        current_user = n
-    except:
-        raise ValueError("Erro na função \"input\"")
+    n = input("Introduza o seu nome, ou para como utilizador anónimo basta deixar em branco (carregar só na tecla ENTER)")
+    if n != "":
+        try:
+            print("Bem-vindo de volta", n+".")
+            global current_user
+            current_user = n
+        except:
+            raise ValueError("Erro na função \"input\"")
+    else:
+        users_db.add_user(n)
+        print("Bem-vindo, eu sou um Bot :)")
 
 
 
