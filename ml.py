@@ -10,7 +10,8 @@ def features(analise):
     Função que extraí a(s) features de uma frase analisada e comparada com as RegExs.
     Recebe o dicionário das análises efetuadas, com as expressões regulares e os respetivos grupos "apanhados"
     '''
-    #features = {} A testar com o dicionário da verificação
+    features = {}
+    features['exps'] = analise.keys()
     return analise
 
 
