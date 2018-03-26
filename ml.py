@@ -3,22 +3,34 @@
 
 import nltk
 
+from reg_exps import *
 
 
-def features(analise):
+def features(frase):
     r'''
     Função que extraí a(s) features de uma frase analisada e comparada com as RegExs.
-    Recebe o dicionário das análises efetuadas, com as expressões regulares e os respetivos grupos "apanhados"
+    Recebe uma lista de pares, com a expressão e o respetivo dicionário das análises efetuadas, com as expressões regulares e os respetivos grupos "apanhados"
     '''
+    analise = verifica(frase)
     features = {}
-    features['exps'] = analise.keys()
-    return analise
+    features['keywords'] = []
+    features['exps'] = []
+    for (exp, dic) in analise:    
+        for k in dic.keys():
+            features['keywords'] += [dic[k]]
+        features['exps'] += analise.keys()
+    return features
 
 
-def classificador(train):
-    for t in train.keys():
-        print(t)
-    training_set = []
+'''O classificador pega numa analise do FreeLing, e escolhe uma ação. Ou seja, a função feature vai ter de correr a função verifica das reg_exps,
+e depois extrair o conhecimento que for necessário.'''
+
+
+def classificador(treino_dict):
+    '''"Onde fica Braga?" : {"action" : "procura_lugar", "keywords" : ["lugar", "verbo"]},
+    "Quem é Mozart?"   : {"action" : "procura_pessoa", "keywords" : ["nome", "verbo"]},
+    "Onde se situa o Porto?" : {"action" : "procura_lugar", "keywords" : ["lugar", "verbo"]}'''
+    training_set = [ (k, treino_dict[k]['action']) for k in treino_dict.keys()]
     devtest_set = []
     # Criação do classificador
     classifier_NB = nltk.NaiveBayesClassifier.train(training_set)

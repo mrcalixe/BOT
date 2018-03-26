@@ -48,11 +48,11 @@ verbos_lugar = (r'(ficar|estar|situar|localizar)')
 
 Regexs['pergunta_lugar'] = {'exp': [
     (qualquer_palavra, adverbio_geral, None),
-    (relax, pronome_pessoal_geral, None),
-    (verbos_lugar, verbo_indicativo_presente_geral, 'verbo'),
-    (relax, determinante_geral, None),
+    (relax,            pronome_pessoal_geral, None),
+    (verbos_lugar,     verbo_indicativo_presente_geral, 'verbo'),
+    (relax,            determinante_geral, None),
     (qualquer_palavra, nome_proprio_geral, 'lugar'),
-    (relax, pergunta, None)
+    (relax,            pergunta, None)
 ]}
 
 

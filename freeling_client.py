@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import socket, sys, pickle
+import socket, pickle
 
 class Client:
     def __init__(self, host='localhost', port=1234):
