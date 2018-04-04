@@ -6,12 +6,19 @@ class Actions:
     def __init__(self):
         self.lista = []
 
-    def pergunta_pessoa(self, nome):
+    def pergunta_nome(self, nome, *args):
         return procura_nome(nome)
 
-    def procura_lugar(self, lugar):
+    def pergunta_pessoa(self, nome, *args):
+        return procura_nome(nome)
+
+    def procura_lugar(self, lugar, *args):
         procura_lugar(lugar)
 
+    def bem_vindo(self, interjeicao, *args):
+        return 'Olá :)'
 
-def call_func(a, func):
-    method = getattr(a, func)
+    def adeus(self, interjeicao, *args):
+        return 'Até uma próxima :)'
+
+Act = Actions()

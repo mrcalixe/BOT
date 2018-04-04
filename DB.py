@@ -43,8 +43,7 @@ class DB_Frases:
 
     def dump(self, file):
         '''Escreve num ficheiro em formato JSON'''
-        with open(file, "w+") as outfile:
-            json.dump(self.db, outfile)
+        json.dump(self.db, file)
 
     def readback(self, file):
         '''Lê de um ficheiro no formato JSON'''
@@ -81,8 +80,7 @@ class DB_Keywords:
 
     def dump(self, file):
         '''Escreve num ficheiro em formato JSON'''
-        with open(file, "w+") as outfile:
-            json.dump(self.db, outfile)
+        json.dump(self.db, file)
 
     def readback(self, file):
         '''Lê de um ficheiro no formato JSON'''
@@ -91,11 +89,11 @@ class DB_Keywords:
 
 
 def dump(DB_frases, DB_Keywords, file):
-    with open(file, "w+") as outfile:
-        json.dump({"treino": DB_frases, "keywords": DB_Keywords}, outfile)
+    with open(file, "w") as outfile:
+        json.dump({'frases': DB_frases.db, 'keywords': DB_Keywords.db}, outfile)
 
 
 def readback(file):
     with open(file, "r") as outfile:
         Tmp = json.load(outfile)
-        return Tmp["treino"], Tmp["keywords"]
+        return Tmp["frases"], Tmp["keywords"]

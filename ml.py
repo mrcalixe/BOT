@@ -13,13 +13,13 @@ def features(frase):
     '''
     analise = verifica(frase)
     features = {}
-    features['keywords'] = []
-    features['exps'] = []
-    for (exp, dic) in analise:    
-        for k in dic.keys():
-            features['keywords'] += [dic[k]]
-        features['exps'] += analise.keys()
-    return features
+    keywords = set([])
+    exps = []
+    for exp in analise.keys():
+        for k in analise[exp].keys():
+            keywords.add(analise[exp][k])
+    exps = analise.keys()
+    return features, keywords, exps
 
 
 '''O classificador pega numa analise do FreeLing, e escolhe uma ação. Ou seja, a função feature vai ter de correr a função verifica das reg_exps,

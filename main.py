@@ -8,15 +8,12 @@ from wikipedia_wrapper import *
 import sys
 from freeling_client import Client
 import DB as frase_keys_db
+import Actions
 
 know_db = None
 users_db = None
 current_user = "Anónimo"
 bot_name = "Bot"
-
-
-#TODO alterar a forma como o BOT inicia ao perguntar o nome.
-#TODO Questionar antes se quer continuar como anonimo.
 
 
 frases_db = None
@@ -42,6 +39,11 @@ def init_dbs():
 
 
 def main(args):
+    global frases_db
+    global keywords_db
+    global know_db
+    global users_db
+    global current_user
     if len(args) == 1:
         host = 'localhost'
         port = 1234
@@ -50,6 +52,8 @@ def main(args):
         port = int(args[2])
 
     sock = Client(host, port)
+
+    init_dbs()
 
     try:
         first_conversation()
@@ -65,7 +69,7 @@ def main(args):
     except ValueError:
         pass
     finally:
-        know_db.db.close()
+        frase_keys_db.dump(frases_db, keywords_db, 'frases_keywords_db.json')
         dump_users(users_db.users, "users_db.json")
         sock.close()
 
@@ -74,7 +78,7 @@ def main(args):
 def first_conversation():
     # Perguntar se quer continuar anonimo ou com utilizador normal
 
-    n = input("Introduza o seu nome, ou para como utilizador anónimo basta deixar em branco (carregar só na tecla ENTER)")
+    n = input("Introduza o seu nome, ou para como utilizador anónimo basta deixar em branco (carregar só na tecla ENTER):\n")
     if n != "":
         try:
             print("Bem-vindo de volta", n+".")
@@ -87,19 +91,36 @@ def first_conversation():
         print("Bem-vindo, eu sou um Bot :)")
 
 
+def call_func(func, args):
+    return getattr(Actions, func)(args)
+
 
 def f(s, sock):
     sock.send(s)
-    tagged = sock.recv()
-    parsed = parse_freeling_analise(tagged)
+    tagged = parse_analise(sock.recv())
 
-    res = match(parsed)
+    res = verifica_especiais(tagged)
     print("Expressões:", res)
-    if res != []:
-        a = feature(res)
-        return a
+
+    if res != {}:
+        key = random.choice(list(res.keys()))
+        return call_func(Regexs_Especiais[key]['action'], res[key])
     else:
-        return 'Não consegui entender.'
+        res = verifica(tagged)
+        print("Expressões:", res)
+
+        if res != {}:
+            key = random.choice(list(res.keys()))
+            return call_func(Regexs[key]['action'], res[key])
+        else:
+            res = verifica_backup(tagged)
+            print("Expressões:", res)
+
+            if res != {}:
+                key = random.choice(list(res.keys()))
+                return call_func(Regexs_Backup[key]['action'], res[key])
+            else:
+                return 'Não consegui entender...'
 
 if __name__ == '__main__':
     main(sys.argv)

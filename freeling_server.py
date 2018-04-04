@@ -5,7 +5,7 @@ import sys, socket, pickle
 import multiprocessing as mp
 
 
-import APIs.FreeLing.python3.pyfreeling as freeling
+import FreeLing.APIs.python3.pyfreeling as freeling
 
 
 def maco_options(lang,lpath, separator) :
@@ -29,7 +29,7 @@ def maco_options(lang,lpath, separator) :
 def init_freeling(lang):
     separator = '/'
     freeling.util_init_locale("default");
-    path_freeling = "/usr/share/freeling/"+lang+separator
+    path_freeling = "/usr/local/share/freeling/"+lang+separator
     tk = freeling.tokenizer(path_freeling+"tokenizer.dat")
     sp = freeling.splitter(path_freeling + "splitter.dat")
     morfo = freeling.maco(maco_options(lang, path_freeling, separator))
