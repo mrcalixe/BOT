@@ -2,6 +2,8 @@
 
 Repositório com o código e projeto do estágio na Accenture
 
+Versão 0.1-alpha
+
 
 ## Introdução
 
@@ -14,8 +16,10 @@ linguagem natural através de uma modelação de Expressões Regulares mais sofi
 + [**FreeLing**](http://nlp.lsi.upc.edu/freeling/)
 + [**Jspell**](http://natura.di.uminho.pt/wiki/doku.php?id=ferramentas:jspell)
 + [**Wikipedia**](https://wikipedia.readthedocs.io/en/latest/quickstart.html)
++ [**Google Maps API**](https://github.com/googlemaps/google-maps-services-python)
 
-## Instalação em Windows - WSL, FreeLing, NLTK, PyCharm
+## Instalação no WSL, FreeLing, NLTK, PyCharm.
+Para instalar em Linux, basta saltar os passos 1,2,4.
 1. Instalação do WSL (Windows Subsystem Linux): Abrir uma PowerShell em modo de administrador e executar:
     ```visual basic
     Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
@@ -33,13 +37,22 @@ Nota: para abrir um PowerShell em modo administrador, basta carregar no menu ini
     sudo pip3 install -U numpy nltk wikipedia
     ```
 4. Seguir através deste [**tutorial**](https://gist.github.com/dentechy/de2be62b55cfd234681921d5a8b6be11) como ativar e configurar o SSH no Ubuntu
-5. Abrindo o PyCharm, configurar o interpretador remoto através de SSH.
-6. Importar o projeto através do GitHub.
-7. No Ubuntu navegar até à pasta da API do FreeLing que está no projeto e executar:
+5. Instalação do BOT, FreeLing e API para python.
     ```bash
+    git clone https://github.com/mrcalixe/BOT.git
+    cd BOT
+    git submodule init
+    git submodule update
+    cd Freeling
+    sudo apt-get install build-essential automake autoconf libtool
+    ./configure
+    make
+    sudo make install
     cd APIs/python3
     make
     ```
+6. Abrir o PyCharm, abrir o projeto, e configurar o interpretador remoto através de SSH.
+
 
 ## Módulos
 |Módulo              |Descrição
@@ -64,7 +77,7 @@ Nota: para abrir um PowerShell em modo administrador, basta carregar no menu ini
 ## Utilizarção
 
 Correr no terminal em primeiro um servidor FreeLing:
-
+(Quando não se passam parámetros a este módulo, é assumido o ip localhost e a porta 1234)
 ```bash
     ./freeling_server.py localhost 1234
 ```
@@ -75,7 +88,7 @@ A sintaxe deste módulo é:
 
 
 Para correr o programa:
-
+(Quando não se passam parámetros a este módulo, é assumido o ip localhost e a porta 1234)
 ```bash
     ./main localhost 1234
 ```
@@ -122,4 +135,4 @@ para que esteja sempre ligado e qualquer pessoa o possa utilizar
 |VN  | Verbo: Infinitivo
 |VP  | Verbo: Particípio
 |VS  | Verbo: Modo Conjuntivo
-|Z  | Numeral
+|Z   | Numeral
