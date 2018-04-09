@@ -56,7 +56,7 @@ Nota: para abrir um PowerShell em modo administrador, basta carregar no menu ini
 
 ## Módulos
 
-# FreeLing
+### FreeLing
 
 Contém ainda o repositório da API do FreeLing como submódulo Git.
 
@@ -66,27 +66,27 @@ Contém ainda o repositório da API do FreeLing como submódulo Git.
 |freeling_client.py      | Cliente para o servidor python FreeLing. |
 |freeling_wrapper.py     | Inicializa a API do FreeLing com as opções de análise morfológica e inicialização dos tokenizer, splitter, analisador morfológico e tagger.
 
-# Expressões Regulares
+### Expressões Regulares
 
 |Expressões Regulares    |Descriçãao
 | ---------------------  | ----------------------------------------------------
 |reg_exps.py             | Módulo responsável pela modelação e processamento das expressões regulares. |
 |regex_debugger.py       | Módulo para facilitar o debugging do módulo das expressões regulares com um cliente para o FreeLing. |
 
-# Base de Dados
+### Base de Dados
 
 |Base de Dados           |Descrição
 | ---------------------  | ----------------------------------------------------
 |DB.py                   | Base de dados com o conhecimento do BOT (keywords e significado das mesmas; frases com as ações realizadas). |
 
-# Wrappers
+### Wrappers
 
 |Wrappers de API's       |Descrição
 | ---------------------  | ----------------------------------------------------
 |google_maps_wrapper.py  | Módulo que faz o wrap da API do Google Maps Places. |
 |wikipedia_wrapper.py    | Módulo responsável pela procura de informação na Wikipedia. |
 
-# Ideias e módulos que já não são desnecessários
+### Ideias e módulos que já não são desnecessários
 
 |Módulos desnecessários  |Descrição
 | ---------------------  | ----------------------------------------------------
@@ -94,7 +94,7 @@ Contém ainda o repositório da API do FreeLing como submódulo Git.
 |Knowledge_DB            | Base de dados em SQLite para armazenar o conhecimento. |
 |Ideias                  | Contém módulos que com algumas ideias e com o classificador de género utilizado para aprender  trabalhar com a NLTK. |
 
-# Ficheiros Latex
+### Ficheiros Latex
 
 Mais tarde vão ser adicionados mais ficheiros como por exemplo o ficheiro da dissertação
 
@@ -102,13 +102,13 @@ Mais tarde vão ser adicionados mais ficheiros como por exemplo o ficheiro da di
 | ---------------------  | ----------------------------------------------------
 |Modelo_Linguistico.tex  | Modelo linguístico do BOT
 
-# Machine Learning
+### Machine Learning
 
 |Machine Learning        |Descrição
 | ---------------------  | ----------------------------------------------------
 |ml.py                   | Módulo principal responsável por toda a parte de Machine Learning. |
 
-# Módulos de funcionamento
+### Módulos de funcionamento
 
 |Módulo de funcionamento | Descrição
 | ---------------------  | ----------------------------------------------------
