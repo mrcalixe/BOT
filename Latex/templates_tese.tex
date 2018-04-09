@@ -1,0 +1,227 @@
+\documentclass[12pt,a4paper,twoside]{report}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{a4wide}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{mathrsfs}
+\usepackage{amsmath,amsthm}
+\usepackage{enumitem}
+\usepackage{multicol}
+
+\usepackage{float}
+
+\usepackage{titling}
+\usepackage{bbm}
+
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\linespread{1.5}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\dps}{\displaystyle}
+
+\renewcommand{\sfdefault}{lmss}
+\renewcommand{\familydefault}{\sfdefault}
+
+\newtheorem{teorema}{Theorem}[chapter]
+\newtheorem{proposicao}[teorema]{Proposition}
+\newtheorem{corolario}[teorema]{Corollary}
+\newtheorem{lema}[teorema]{Lemma}
+\newtheorem{definicao}[teorema]{Definition}
+\newtheorem{exemplo}[teorema]{Example}
+\newenvironment{notas}{\vskip 0.5cm\noindent\textbf{Nota}\small}{\vskip .3cm}
+
+
+\def\dem{\noindent{\bf Proof:}\ }
+\def\FIM{\hfill $\Box$}
+
+\theoremstyle{remark}
+\newtheorem*{nota}{Nota}
+
+\theoremstyle{example}
+\newtheorem{ex}{Exemplo}[section]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\Dom}{Dom}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Wr}{Wr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\makeindex
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[T1]{fontenc}
+\usepackage{titlesec, blindtext, color}
+\definecolor{gray75}{gray}{0.2}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\LARGE\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\LARGE\bfseries}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\pagenumbering{roman}
+%\setcounter{page}{3}
+
+
+\newpage
+\thispagestyle{empty}
+\null
+\newpage
+
+\hbox{}
+
+\strut
+
+\noindent Ana Rita Garcia Alves\\
+
+\noindent Endere\c{c}o eletr\'{o}nico:   a.rita.g.alves@gmail.com \\
+
+\vspace{1cm}\noindent T\'{\i}tulo da disserta\c{c}\~{a}o: Semigroup Operators and Applications\\
+
+\noindent Orientadoras: Doutora Maria Paula Marques Smith e Doutora Maria Paula Freitas de Sousa Mendes Martins\\
+
+\noindent Ano de conclus\~{a}o: 2015\\
+
+\noindent Mestrado em Matem\'{a}tica\\
+
+\vspace{4cm}
+\noindent \textbf{\'{E} autorizada a reprodu\c{c}\~{a}o integral desta disserta\c{c}\~{a}o apenas para efeitos de investiga\c{c}\~{a}o, mediante declara\c{c}\~{a}o escrita do interessado, que a tal se compromete.}\\
+
+\noindent Universidade do Minho, 30 de outubro de 2015\\
+
+\noindent A autora: Ana Rita Garcia Alves
+
+\newpage\noindent\textbf{ACKNOWLEDGEMENTS}
+
+\strut
+
+I would like to sincerely thank Professor Paula Marques Smith and Professor Paula Mendes Martins for all the knowledge they shared with me, support, guidance and encouragement. They have been and continue to be an inspiration. I am very grateful for all the valuable suggestions and advices they gave to me.
+
+\newpage
+\thispagestyle{empty}
+\null
+
+\newpage\noindent\textbf{ABSTRACT}
+
+\strut
+
+In this thesis, some algebraic operators are studied and some examples of their application in semigroup theory are presented. This study contains properties of the following algebraic operators: direct product, semidirect product, wreath product and $\lambda$-semidirect product. Characterisations of certain semigroups are provided using the operators studied.
+
+\newpage
+\thispagestyle{empty}
+\null
+
+\newpage\noindent\textbf{RESUMO}
+
+\strut
+
+Nesta tese estudamos alguns operadores algébricos e apresentamos exemplos de suas aplicações. No estudo efetuado estabelecemos propriedades dos seguintes operadores algébricos: produto direto, produto semidireto, produto de wreath e produto $\lambda$-semidireto. São também estabelecidas caracterizações de certos semigrupos usando os operadores estudados.
+
+\newpage
+\thispagestyle{empty}
+\null
+
+
+\newpage
+%\renewcommand{\contentsname}{\'{I}ndice}
+\tableofcontents
+
+
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+
+The main objectives of this dissertation are the study of some algebraic operators and of their importance for the development of semigroup theory, and the presentation of some examples of their application in this theory. Some of this operators are universal in the sense they are used in classes of any kind of algebras. An example of this is the direct product. Other operators were introduced only for classes of semigroups. That is the case, for example, of the $\lambda$-semidirect product. The studies about this last kind of operators can be found in several articles and in certain cases with very different terminology and notation. Thus, in the present study, we present a brief review of this knowledge.
+
+In the preliminary phase, we study basic concepts and results concerning arbitrary semigroups as well as regular semigroups, orthodox and inverse semigroups, which are necessary to understand the subsequent chapters. For all the notations, terminologies and notions not defined in
+this thesis, and for the proofs of the results presented in Chapter \ref{cap1}, the reader is referred to \cite{5}, \cite{4}, \cite{2} and \cite{3}. The following chapters contain a study of the direct product, semidirect product, wreath product and $\lambda$-semidirect product: some properties and some applications.
+
+\newpage
+\thispagestyle{empty}
+\null
+
+\include{00}
+\newpage
+\thispagestyle{empty}
+\null
+
+\include{01_dp}
+\newpage
+\thispagestyle{empty}
+\null
+
+\include{02_sp}
+
+\include{03_wp}
+
+\include{04_lsp}
+
+\chapter{hhbj}
+\newpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\setcounter{section}{0}
+\begin{thebibliography}{x}
+
+\bibitem{8} B. Billhardt. {\it On a wreath product embedding and idempotent pure congruences on inverse semigroups}. Semigroup Forum 45 (1992) 45-54
+
+\bibitem{1} B. Billhardt. {\it On a wreath product embedding for regular semigroup}. Semigroup Forum 46 (1993), 62-72
+
+\bibitem{9} B. Billhardt. {\it On $\lambda$-semidirect  products by locally $R$-unipotent semigroups}. Acta Sci. Math., 67 (2001) 161 - 176
+
+\bibitem{6} T. S. Blyth and R. McFadden. {\it Unit orthodox semigroups}. Glasgow Math. J. 24 (1983), 39-42
+
+\bibitem{5} P. A. Grillet. {\it Semigroups: an introduction to the structure theory}. Marcel Dekker, Inc., New York (1995)
+
+\bibitem{4} J. M. Howie. {\it An introduction to semigroup theory}. Academic Press, London (1976)
+
+\bibitem{2} J. M. Howie. {\it Fundamentals of semigroup theory}. London Math. Soc. Monographs, New Series 12, Clarendon Press, Oxford (1995)
+
+\bibitem{3} M. V. Lawson. {\it Inverse semigroups: the theory of partial symmetrics}. World Scientific, Singapore (1998)
+
+\bibitem{10} B. H. Neumann. {\it Embedding theorems for semigroups}. J. London Math. Soc. 35 (1960), 184-192
+
+\bibitem{7} W. R. Nico. {\it On the regularity of semidirect products}. Journal of Algebra 80 (1983), 29-36
+
+\bibitem{16} F. Pastijn and M. Petrich. {\it Congruences on regular semigroups}. Transactions of the American Math. Soc. 295, Number 2 (1986), 607-633
+
+\bibitem{15} M. Petrich. {\it Congruences on inverse semigroups}. Journal of Algebra 55 (1978), 231-256
+
+\bibitem{12} M. Petrich. {\it Inverse semigrous}. John Wiley and Sons, New York (1984)
+
+\bibitem{13} T. Saito. {\it Ordered regular proper semigroups}. Journal of Algebra 8 (1968), 450-477
+
+\bibitem{14} Takizawa and Kiyoshi. {\it E-unitary R-unipotent semigroups}. Bull. Tokyo Gakugei Univ., Ser. IV, 30 (1978), 21-33
+
+\bibitem{11} C. Wells. {\it Some applications of the wreath product construction}. The American Mathematical Monthly 83, Number 5 (1976), 317-338
+
+
+
+
+
+\end{thebibliography}
+
+\end{document} 

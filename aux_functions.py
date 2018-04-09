@@ -17,7 +17,7 @@ class State:
 class Knowledge_BD:
     # Esta BD tem o conhecimento que o BOT adquiriu (numa parte inicial, só sobre música)
     def __init__(self, tables = False):
-        self.db = sql.connect('Knowledge_DB/db')
+        self.db = sql.connect('DBs/db')
         self.id = 0
         if tables:
             cursor = self.db.cursor()

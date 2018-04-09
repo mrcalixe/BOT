@@ -1,5 +1,5 @@
-from wikipedia_wrapper import procura_nome
-from google_maps_wrapper import procura_lugar
+from Wrappers.wikipedia_wrapper import procura_nome
+from Wrappers.google_maps_wrapper import procura_lugar
 
 
 class Actions:
