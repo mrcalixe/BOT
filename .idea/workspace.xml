@@ -50,8 +50,17 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+            <state relative-caret-position="645">
+              <caret line="101" column="11" selection-start-line="101" selection-start-column="11" selection-end-line="101" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DB.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DB.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -311,7 +320,21 @@
       <option name="project" value="LOCAL" />
       <updated>1522855822384</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Atulaização do README com instruções de instalação e outras atualizações.">
+      <created>1523261984340</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1523261984340</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Atualização dos módulos no README">
+      <created>1523262763774</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1523262763774</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -325,7 +348,7 @@
       <window_info anchor="bottom" id="Python Console" order="9" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24479167" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24479167" />
       <window_info anchor="right" id="R Packages" order="3" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="R Graphics" order="6" />
@@ -366,7 +389,9 @@
     <MESSAGE value="Correção das RegExs.&#10;Adição de um novo campo nas RegExs.&#10;Adição da API Google Maps Places. (A funcionar)&#10;Inicio das ações do sistema (funções que serão escolhidas para responder ao cliente).&#10;Criação de uma pasta que contém todos os LaTex que serão produzidos." />
     <MESSAGE value="Correção de pequenas coisas.&#10;Introdução do modulo Actions que serve para ter uma classe com todas as funções do BOT, para que possam ser chamadas através de strings. Isto tudo para que n cnjunto de treino se consiga dizer que funções é que devem ser usadas.&#10;Construção de um pequeno conjunto de treino.&#10;Adicição de uma expressão regular." />
     <MESSAGE value="Adição de expressões regulares de backup (caso não haja nenhum match), e especiais (como adeus e bem vindo).&#10;&#10;BOT funcional, só com um ligeiro problema ao chamar alguns métodos do módulo das &quot;Actions&quot;.&#10;&#10;Versão 0.1alpha" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adição de expressões regulares de backup (caso não haja nenhum match), e especiais (como adeus e bem vindo).&#10;&#10;BOT funcional, só com um ligeiro problema ao chamar alguns métodos do módulo das &quot;Actions&quot;.&#10;&#10;Versão 0.1alpha" />
+    <MESSAGE value="Atulaização do README com instruções de instalação e outras atualizações." />
+    <MESSAGE value="Atualização dos módulos no README" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atualização dos módulos no README" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/reg_exps.py">
@@ -594,13 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="746">
-          <caret line="98" column="44" lean-forward="true" selection-start-line="98" selection-start-column="44" selection-end-line="98" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/google_maps_wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1344">
@@ -649,10 +667,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+        <state relative-caret-position="645">
+          <caret line="101" column="11" selection-start-line="101" selection-start-column="11" selection-end-line="101" selection-end-column="11" />
         </state>
       </provider>
     </entry>
