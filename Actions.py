@@ -1,24 +1,37 @@
-from Wrappers.wikipedia_wrapper import procura_nome
-from Wrappers.google_maps_wrapper import procura_lugar
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
+import Wrappers.wikipedia_wrapper as wiki
+import Wrappers.google_maps_wrapper as gmaps
 
 
-class Actions:
-    def __init__(self):
-        self.lista = []
+def pergunta_nome(**kargs):
+    print('kargs:', kargs)
+    if kargs['dict']:
+        return wiki.procura_nome(kargs['dict']['name'])
+    else:
+        return 'Não consegui entender o nome...'
 
-    def pergunta_nome(self, nome, *args):
-        return procura_nome(nome)
+def pergunta_pessoa(**kargs):
+    print('kargs:', kargs)
+    if kargs['dict']:
+        return wiki.procura_nome(kargs['dict']['name'])
+    else:
+        return 'Não consegui entender o nome da pessoa...'
 
-    def pergunta_pessoa(self, nome, *args):
-        return procura_nome(nome)
+def procura_lugar(**kargs):
+    print('kargs:', kargs)
+    if kargs['dict']:
+        return gmaps.procura_lugar(kargs['dict']['locality'])
+    else:
+        return 'Não consegui entender o lugar...'
 
-    def procura_lugar(self, lugar, *args):
-        procura_lugar(lugar)
-
-    def bem_vindo(self, interjeicao, *args):
+def bem_vindo(**kargs):
+    print('kargs:', kargs)
+    if kargs['dict']:
+        return 'Olá ' + (kargs['dict']['name']).capitalize() + ', prazer em conhecer :)'
+    else:
         return 'Olá :)'
 
-    def adeus(self, interjeicao, *args):
-        return 'Até uma próxima :)'
-
-Act = Actions()
+def adeus(**kargs):
+    return 'Até à próxima :)'

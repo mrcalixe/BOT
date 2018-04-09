@@ -9,11 +9,6 @@ def oneOf(arr):
     rand_idx = random.randint(0,len(arr) - 1)
     return arr[rand_idx]
 
-class State:
-    # Futura classe que representará o estado do BOT
-    def __init__(self):
-        self.sys = 1
-
 class Knowledge_BD:
     # Esta BD tem o conhecimento que o BOT adquiriu (numa parte inicial, só sobre música)
     def __init__(self, tables = False):
@@ -51,7 +46,7 @@ class Knowledge_BD:
         cursor.execute('''
             SELECT * FROM music
               WHERE author = ?''', author)
-        all_rows = self.cursor.fetchall()
+        all_rows = cursor.fetchall()
         cursor.close()
         return all_rows
 

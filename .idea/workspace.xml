@@ -1,34 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54094adf-2760-470d-97b4-bf8956ae8712" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/DBs/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exps_Regulares/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ideias/Names_Parser/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ideias/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Latex/templates_tese.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Machine_Learning/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Wrappers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Wrappers/freeling_wrapper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+    <list default="true" id="54094adf-2760-470d-97b4-bf8956ae8712" name="Default" comment="Limpeza e organização dos módulos.">
+      <change afterPath="$PROJECT_DIR$/Ideias/GUI.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/State.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Actions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB.py" beforeDir="false" afterPath="$PROJECT_DIR$/DBs/DB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Knowledge_DB/db" beforeDir="false" afterPath="$PROJECT_DIR$/DBs/db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Names_Parser/clean_csvname.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ideias/Names_Parser/clean_csvname.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Names_Parser/nomes-registados-2016.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Ideias/Names_Parser/nomes-registados-2016.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Names_Parser/nomes_clean.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Ideias/Names_Parser/nomes_clean.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Names_Parser/tabula-NomesAdmit.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Ideias/Names_Parser/tabula-NomesAdmit.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBs/users_db.json" beforeDir="false" afterPath="$PROJECT_DIR$/DBs/users_db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exps_Regulares/reg_exps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exps_Regulares/reg_exps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wrappers/google_maps_wrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Wrappers/google_maps_wrapper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aux_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/aux_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frases_keywords_train.json" beforeDir="false" afterPath="$PROJECT_DIR$/DBs/frases_keywords_train.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/freeling_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/freeling_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/google_maps_wrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Wrappers/google_maps_wrapper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/Machine_Learning/ml.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reg_exps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exps_Regulares/reg_exps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regex_debugger.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exps_Regulares/regex_debugger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users_db.json" beforeDir="false" afterPath="$PROJECT_DIR$/DBs/users_db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wikipedia_wrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Wrappers/wikipedia_wrapper.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,8 +25,8 @@
       <file leaf-file-name="reg_exps.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Exps_Regulares/reg_exps.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2667">
-              <caret line="127" column="30" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="30" />
+            <state relative-caret-position="309">
+              <caret line="109" column="10" lean-forward="true" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -51,8 +34,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1225">
-              <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+            <state relative-caret-position="60">
+              <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
               <folding>
                 <element signature="e#44#71#0" expanded="true" />
               </folding>
@@ -60,22 +43,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="aux_functions.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aux_functions.py">
+      <file leaf-file-name="Actions.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Actions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-31">
-              <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+            <state relative-caret-position="42">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Actions.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Actions.py">
+      <file leaf-file-name="State.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/State.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+            <state relative-caret-position="210">
+              <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="freeling_server.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/freeling_server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="537">
+              <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
               <folding>
-                <element signature="e#0#42#0" expanded="true" />
+                <element signature="e#44#70#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,14 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="freeling_server.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/freeling_server.py">
+      <file leaf-file-name="google_maps_wrapper.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Wrappers/google_maps_wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-              <folding>
-                <element signature="e#44#70#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="547">
+              <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -122,6 +114,7 @@
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="ROOT_SYNC" value="SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -146,15 +139,19 @@
         <option value="$PROJECT_DIR$/google_maps_wrapper.py" />
         <option value="$PROJECT_DIR$/freeling_client.py" />
         <option value="$PROJECT_DIR$/reg_exps.py" />
-        <option value="$PROJECT_DIR$/Actions.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Names_Parser/__init__.py" />
         <option value="$PROJECT_DIR$/Ideias/__init__.py" />
         <option value="$PROJECT_DIR$/Wrappers/__init__.py" />
         <option value="$PROJECT_DIR$/Wrappers/freeling_wrapper.py" />
         <option value="$PROJECT_DIR$/freeling_server.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Wrappers/google_maps_wrapper.py" />
         <option value="$PROJECT_DIR$/aux_functions.py" />
+        <option value="$PROJECT_DIR$/Actions.py" />
+        <option value="$PROJECT_DIR$/Ideias/GUI.py" />
+        <option value="$PROJECT_DIR$/State.py" />
+        <option value="$PROJECT_DIR$/Exps_Regulares/reg_exps.py" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
@@ -166,9 +163,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
+    <option name="x" value="760" />
+    <option name="y" value="15" />
     <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="height" value="1008" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -192,7 +190,22 @@
             <path>
               <item name="BOT" type="b2602c69:ProjectViewProjectNode" />
               <item name="BOT" type="462c0819:PsiDirectoryNode" />
+              <item name="Esquemas das reuniões" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BOT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BOT" type="462c0819:PsiDirectoryNode" />
               <item name="Exps_Regulares" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BOT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BOT" type="462c0819:PsiDirectoryNode" />
+              <item name="Ideias" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BOT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BOT" type="462c0819:PsiDirectoryNode" />
+              <item name="Wrappers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -373,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523263178486</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Limpeza e organização dos módulos.">
+      <created>1523265535190</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1523265535190</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -381,13 +401,14 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32873806" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32837406" />
+      <window_info anchor="right" x="0" y="0" width="193" height="847" id="Documentation" order="7" side_tool="true" weight="0.23854166" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32979852" />
       <window_info anchor="bottom" id="Python Console" order="9" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24479167" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16197917" />
       <window_info anchor="right" id="R Packages" order="3" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="R Graphics" order="6" />
@@ -402,7 +423,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.32996634" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32837406" />
-      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="7" side_tool="true" weight="0.23958333" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
     </layout>
@@ -430,62 +450,15 @@
     <MESSAGE value="Adição de expressões regulares de backup (caso não haja nenhum match), e especiais (como adeus e bem vindo).&#10;&#10;BOT funcional, só com um ligeiro problema ao chamar alguns métodos do módulo das &quot;Actions&quot;.&#10;&#10;Versão 0.1alpha" />
     <MESSAGE value="Atulaização do README com instruções de instalação e outras atualizações." />
     <MESSAGE value="Atualização dos módulos no README" />
-    <option name="LAST_COMMIT_MESSAGE" value="Atualização dos módulos no README" />
+    <MESSAGE value="Limpeza e organização dos módulos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Limpeza e organização dos módulos." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/freeling_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Actions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="78" column="28" lean-forward="true" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Machine_Learning/ml.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2289">
-          <caret line="260" column="28" selection-start-line="260" selection-start-column="28" selection-end-line="260" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Exps_Regulares/reg_exps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1596">
-          <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/freeling_wrapper.py" />
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="78" column="28" lean-forward="true" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Machine_Learning/ml.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5460">
-          <caret line="260" column="28" selection-start-line="260" selection-start-column="28" selection-end-line="260" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Exps_Regulares/reg_exps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1869">
@@ -606,24 +579,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Wrappers/google_maps_wrapper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1344">
-          <caret line="64" column="44" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Wrappers/wikipedia_wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Exps_Regulares/reg_exps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2667">
-          <caret line="127" column="30" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -674,13 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -688,30 +640,129 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Actions.py">
+    <entry file="file://$PROJECT_DIR$/.gitmodules">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="355">
+          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wrappers/google_maps_wrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aux_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31">
-          <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+        <state relative-caret-position="189">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding>
+            <element signature="e#44#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Actions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ideias/GUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Esquemas das reuniões/2017-11-16.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Esquemas das reuniões/2018-02-07.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="uml://Python/str">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>str</OriginalElement>
+          <nodes>
+            <node x="" y="">typing.Iterable</node>
+            <node x="" y="">typing.Sequence</node>
+            <node x="" y="">typing._Collection</node>
+            <node x="" y="">abc.ABCMeta</node>
+            <node x="" y="">typing.Reversible</node>
+            <node x="" y="">str</node>
+            <node x="" y="">typing.Sized</node>
+            <node x="" y="">object</node>
+            <node x="" y="">typing.Container</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="182.5" y="167.5" />
+          <SelectedNodes />
+          <Categories />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#C:/Users/Carlos Pereira/PycharmProjects/BOT/main.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#C:/Users/Carlos Pereira/PycharmProjects/BOT/main.py</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="960.0" y="444.5" />
+          <SelectedNodes />
+          <Categories />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1225">
-          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        <state relative-caret-position="60">
+          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
           <folding>
             <element signature="e#44#71#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#C:/Users/Carlos Pereira/PycharmProjects/BOT/Exps_Regulares/reg_exps.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#C:/Users/Carlos Pereira/PycharmProjects/BOT/Exps_Regulares/reg_exps.py</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="804.5" y="444.5" />
+          <SelectedNodes />
+          <Categories />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Exps_Regulares/reg_exps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="109" column="10" lean-forward="true" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/State.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -724,8 +775,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/freeling_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+        <state relative-caret-position="537">
+          <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
           <folding>
             <element signature="e#44#70#0" expanded="true" />
           </folding>

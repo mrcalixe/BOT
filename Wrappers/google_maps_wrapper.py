@@ -62,7 +62,7 @@ def escolhe_opcao(resultado):
 
 def procura_lugar(lugar):
     global gmaps, geo_loc, language
-    resultado = gmaps.places(lugar['locality'], location=geo_loc, language=language)
+    resultado = gmaps.places(lugar, location=geo_loc, language=language)
     if len(resultado['results']) > 1:
         # Imprimir os que encontrou
         res = escolhe_opcao(resultado['results'])

@@ -10,8 +10,8 @@ import Actions
 
 know_db = None
 users_db = None
-current_user = "Anónimo"  # type: str
-bot_name = "Bot"          # type: str
+current_user = "Utilizador"  # type: str
+bot_name = "Bot"             # type: str
 
 
 frases_db = None
@@ -76,7 +76,7 @@ def main(args):
 def first_conversation():
     # Perguntar se quer continuar anonimo ou com utilizador normal
 
-    n = input("Introduza o seu nome, ou para como utilizador anónimo basta deixar em branco (carregar só na tecla ENTER):\n")
+    n = input("Introduza o seu nome, ou prima ENTER para continuar anónimo:\n    Nome: ")
     if n != "":
         try:
             print("Bem-vindo de volta", n+".")
@@ -90,33 +90,33 @@ def first_conversation():
 
 
 def call_func(func, args):
-    return getattr(Actions, func)(args)
+    return getattr(Actions, func)(dict=args)
 
 
 def f(s, sock):
     sock.send(s)
     tagged = parse_analise(sock.recv())
 
-    res = verifica_especiais(tagged)
+    res = verifica(tagged)
     print("Expressões:", res)
 
     if res != {}:
         key = random.choice(list(res.keys()))
-        return call_func(Regexs_Especiais[key]['action'], res[key])
+        return call_func(Regexs[key]['action'], res[key])
     else:
-        res = verifica(tagged)
-        print("Expressões:", res)
+        res_esp = verifica_especiais(tagged)
+        print("Expressões_Especiais:", res_esp)
 
-        if res != {}:
-            key = random.choice(list(res.keys()))
-            return call_func(Regexs[key]['action'], res[key])
+        if res_esp != {}:
+            key = random.choice(list(res_esp.keys()))
+            return call_func(Regexs_Especiais[key]['action'], res_esp[key])
         else:
-            res = verifica_backup(tagged)
-            print("Expressões:", res)
+            res_back = verifica_backup(tagged)
+            print("Expressões_backup:", res_back)
 
-            if res != {}:
-                key = random.choice(list(res.keys()))
-                return call_func(Regexs_Backup[key]['action'], res[key])
+            if res_back != {}:
+                key = random.choice(list(res_back.keys()))
+                return call_func(Regexs_Backup[key]['action'], res_back[key])
             else:
                 return 'Não consegui entender...'
 

@@ -14,6 +14,10 @@ verbo_geral = r'V\w*'
 verbo_indicativo_presente_geral = r'VMIP\w*'
 
 
+# Conjução
+conjucao_sub = r'CS'
+conjucao_coord = r'CC'
+
 # Advérbios
 adverbio_geral = r'RG'
 
@@ -82,13 +86,20 @@ Regexs_Especiais = {}
 
 Regexs_Especiais['intro'] = {'exp': [
     (relax, qualquer_palavra, None),
-    (interjeicao_intro, interjeicao, 'interjeicao'),
+    (interjeicao_intro, interjeicao, None),
     (relax, qualquer_palavra, None)
+], 'action': 'bem_vindo'}
+
+Regexs_Especiais['apresentacao_pessoa'] = {'exp': [
+    (relax, pronome_pessoal_geral, None),
+    (qualquer_palavra, verbo_indicativo_presente_geral, None),
+    (qualquer_palavra, determinante_artigo_geral, None),
+    (qualquer_palavra, nome_proprio_geral, 'name')
 ], 'action': 'bem_vindo'}
 
 Regexs_Especiais['outro'] = {'exp': [
     (relax, qualquer_palavra, None),
-    (interjeicao_outro, interjeicao, 'interjeicao'),
+    (interjeicao_outro, interjeicao, None),
     (relax, qualquer_palavra, None)
 ], 'action': 'adeus'}
 
