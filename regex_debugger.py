@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-from freeling_client import Client
+import FreeLing_Client.freeling_client
 from Exps_Regulares.reg_exps import *
 
-sock = Client()
-
-print("Ligado ao servidor.")
+sock = FreeLing_Client.freeling_client.Client()
 
 def test_regex(frase):
     global sock

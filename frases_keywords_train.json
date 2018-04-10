@@ -4,8 +4,8 @@
 	"Onde se situa o Porto?" : {"action" : "procura_lugar", "keywords" : ["lugar", "verbo"]}
 },
   "keywords" : {
-  	"Braga" : ["lugar", "cidade"],
-  	"Porto" : ["lugar", "cidade"],
-  	"Mozart" : ["pessoa", "músico"]
+  	"braga" : {"CAT": "NP", "ORTH": "Braga", "TYPE": "CITY"},
+  	"porto" : {"CAT": "NP", "ORTH": "Porto", "TYPE": "CITY"},
+  	"mozart" : {"CAT": "NP", "ORTH": "Mozart", "TYPE": "PERSON"}
   }
 }

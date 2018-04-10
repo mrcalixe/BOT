@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import sys, socket, pickle
+import sys, socket, json, pickle
 import multiprocessing as mp
-from Wrappers.freeling_wrapper import PoS, init_freeling
+from Wrappers.freeling_wrapper import init_freeling, PoS
 
 
 def server(args):
-    print("A iniciar o servidor...")
+    print("A iniciar o servidor FreeLing...")
     tk, sp, morfo, tagger, sense, wsd, parser = init_freeling("pt")
     if len(args) < 2:
         host = 'localhost'
@@ -25,14 +25,32 @@ def server(args):
         conn, addr = sock.accept()
         print("Ligado:", str(addr))
         while True:
-            data = conn.recv(1024).decode()
+            data = conn.recv(1024)
             if not data:
                 break
+
+            loaded = pickle.loads(data)
             print("Recebi:", str(data))
-            pos = PoS(str(data), tk, sp, morfo, tagger, sense, wsd, parser)
-            print("Enviei:", pos)
-            conn.send(pickle.dumps(pos))
+            send = None
+            if 'pos' in loaded.keys():
+                send = PoS(loaded['pos'], tk, sp, morfo, tagger, sense, wsd, parser)
+
+            elif 'token' in loaded.keys():
+                send = str(tk.tokenize(loaded['token']))
+
+            elif 'split' in loaded.keys():
+                send = tk.tokenize(loaded['split'])
+                send = sp.split(send)
+
+            print("A enviar:", send)
+            conn.send(pickle.dumps(send))
         conn.close()
+
+
+# Protocolo
+# {'pos' : frase} <- fazer a analise PoS
+# {'token' : frase} <- fazer o tokenize
+# {'split' : frase} <- fazer o split
 
 
 def main(argv):

@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import json
+from State import State
 
 
 class DB_Frases:
@@ -88,12 +89,48 @@ class DB_Keywords:
             self.db = json.load(outfile)
 
 
-def dump(DB_frases, DB_Keywords, file):
+class Users_DB:
+    # Dicionário que contém os utilizadores que já utilizaram o BOT
+    def __init__(self):
+        self.users = {}
+
+    # Visto que não existe a função has_key no dicionário, basta tentar aceder à chave e caso haja uma exceção significa que não existe entrada
+    def check_user(self, user):
+        try:
+            t = self.users[user]
+            return True
+        except KeyError:
+            return False
+
+    # Adiciona uma entrada de um utilizador.
+    # Nesta entrada ainda vai existir um log com as vezes que este utilizador já utilizou o BOT, bem como o tema das conversas.
+    def add_user(self, user):
+        self.users[user] = {'state': State()}
+
+    def add_frase(self, user, frase):
+        try:
+            self.users[user]['state'].add(frase)
+        except KeyError:
+            raise ValueError("Não existe esse utilizador.")
+
+
+# Esta função escreve num ficheiro em formato JSON o dicionário dos utilizadores
+def dump_users(users_db, file):
+    with open(file, "w+") as outfile:
+        json.dump(users_db, outfile)
+
+# Esta função lê de um ficheiro no formato JSON o dicionário dos utilizadores
+def readback_users(file):
+    with open(file, "r") as outfile:
+        data = json.load(outfile)
+    return data
+
+def dump_frases_keywords(DB_frases, DB_Keywords, file):
     with open(file, "w") as outfile:
         json.dump({'frases': DB_frases.db, 'keywords': DB_Keywords.db}, outfile)
 
 
-def readback(file):
+def readback_frases_keywords(file):
     with open(file, "r") as outfile:
         Tmp = json.load(outfile)
         return Tmp["frases"], Tmp["keywords"]
