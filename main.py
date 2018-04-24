@@ -28,8 +28,8 @@ def init_dbs():
     global current_user
     users_db = Users_DB()
     try:
-        users_db.users = readback_users("DBs/users_db.json")
-        frases, keywords = readback_frases_keywords("DBs/frases_keywords_train.json")
+        users_db.users = readback_users("users_db.json")
+        frases, keywords = readback_frases_keywords("frases_keywords_train.json")
         frases_db = DB_Frases(frases)
         keywords_db = DB_Keywords(keywords)
     except AttributeError and FileNotFoundError and json.decoder.JSONDecodeError:
@@ -70,8 +70,8 @@ def main(args):
     except ValueError:
         pass
     finally:
-        dump_frases_keywords(frases_db, keywords_db, 'DBs/frases_keywords_db.json')
-        dump_users(users_db.users, "DBs/users_db.json")
+        dump_frases_keywords(frases_db, keywords_db, 'frases_keywords_db.json')
+        dump_users(users_db.users, "users_db.json")
         sock.close()
 
 

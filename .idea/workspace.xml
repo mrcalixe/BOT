@@ -2,38 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54094adf-2760-470d-97b4-bf8956ae8712" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/FreeLing/APIs/python3/freeling_pythonAPI.cxx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FreeLing/APIs/python3/pyfreeling.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FreeLing_Client/freeling_client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Latex/00.aux" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Latex/01_dp.aux" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Latex/02_sp.aux" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Latex/03_wp.aux" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Latex/04_lsp.aux" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Latex/templates_tese.aux" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Latex/templates_tese.idx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Latex/templates_tese.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Latex/templates_tese.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Latex/templates_tese.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Wrappers/dbpedia_wrapper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Apontamentos/Diario de 20171219.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Apontamentos/Diario de 20171219.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Apontamentos/Diario de 20180108.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Apontamentos/Diario de 20180108.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Apontamentos/Notas FreeLing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Apontamentos/Notas FreeLing.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Apontamentos/Notas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Apontamentos/Notas.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBs/DB.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Latex/templates_tese.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBs/db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBs/frases_keywords_train.json" beforeDir="false" afterPath="$PROJECT_DIR$/frases_keywords_train.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBs/users_db.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exps_Regulares/regex_debugger.py" beforeDir="false" afterPath="$PROJECT_DIR$/regex_debugger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FreeLing" beforeDir="false" afterPath="$PROJECT_DIR$/FreeLing" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ideias/lingua_portuguesa.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ideias/lingua_portuguesa.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ideias/morfologia.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ideias/morfologia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/FreeLing_Client/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aux_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/aux_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/freeling_client.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/freeling_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/freeling_server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
-              <caret line="73" column="12" lean-forward="true" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
+            <state relative-caret-position="567">
+              <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
               <folding>
                 <element signature="e#44#69#0" expanded="true" />
               </folding>
@@ -60,13 +37,38 @@
       <file leaf-file-name="DB.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="669">
-              <caret line="127" column="24" selection-start-line="127" selection-start-column="4" selection-end-line="127" selection-end-column="24" />
+            <state relative-caret-position="2562">
+              <caret line="123" column="8" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="8" />
               <folding>
                 <element signature="e#44#55#0" expanded="true" />
-                <element signature="e#79#1540#0" />
-                <element signature="e#1566#2596#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Actions.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Actions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reg_exps.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Exps_Regulares/reg_exps.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1281">
+              <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbpedia_wrapper.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Wrappers/dbpedia_wrapper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -75,7 +77,7 @@
         <entry file="file://$PROJECT_DIR$/State.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -157,8 +159,8 @@
         <option value="$PROJECT_DIR$/Auxiliares/aux_functions.py" />
         <option value="$PROJECT_DIR$/DBs/aux_functions.py" />
         <option value="$PROJECT_DIR$/aux_functions.py" />
-        <option value="$PROJECT_DIR$/DB.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/DB.py" />
       </list>
     </option>
   </component>
@@ -180,6 +182,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,7 +209,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -396,12 +398,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523287200782</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Adição do estado da conversa.&#10;Organização da estrutura.">
+      <created>1523377741415</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1523377741415</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32837406" />
@@ -455,7 +463,8 @@
     <MESSAGE value="Atualização dos módulos no README" />
     <MESSAGE value="Limpeza e organização dos módulos." />
     <MESSAGE value="Correção de alguns erros.&#10;Inicio da programação do estado." />
-    <option name="LAST_COMMIT_MESSAGE" value="Correção de alguns erros.&#10;Inicio da programação do estado." />
+    <MESSAGE value="Adição do estado da conversa.&#10;Organização da estrutura." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adição do estado da conversa.&#10;Organização da estrutura." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -623,7 +632,7 @@
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
           <ID>Python</ID>
-          <OriginalElement>#C:/Users/Carlos Pereira/PycharmProjects/BOT/main.py</OriginalElement>
+          <OriginalElement />
           <nodes />
           <notes />
           <edges />
@@ -638,7 +647,7 @@
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
           <ID>Python</ID>
-          <OriginalElement>#C:/Users/Carlos Pereira/PycharmProjects/BOT/Exps_Regulares/reg_exps.py</OriginalElement>
+          <OriginalElement />
           <nodes />
           <notes />
           <edges />
@@ -665,34 +674,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bot/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/teste.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py" />
+    <entry file="file://$PROJECT_DIR$/Bot/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/teste.py" />
     <entry file="file://$PROJECT_DIR$/regex_debugger.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding>
-            <element signature="e#44#82#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -700,9 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1008">
           <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="e#44#76#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -710,20 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Wrappers/dbpedia_wrapper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Actions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -755,17 +726,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Exps_Regulares/reg_exps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="109" column="10" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/State.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -778,23 +742,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="127" column="24" selection-start-line="127" selection-start-column="4" selection-end-line="127" selection-end-column="24" />
+        <state relative-caret-position="2562">
+          <caret line="123" column="8" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="8" />
           <folding>
             <element signature="e#44#55#0" expanded="true" />
-            <element signature="e#79#1540#0" />
-            <element signature="e#1566#2596#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="73" column="12" lean-forward="true" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
+        <state relative-caret-position="567">
+          <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
           <folding>
             <element signature="e#44#69#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Actions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Exps_Regulares/reg_exps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1281">
+          <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wrappers/dbpedia_wrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
         </state>
       </provider>
     </entry>

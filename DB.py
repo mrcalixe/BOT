@@ -121,9 +121,12 @@ def dump_users(users_db, file):
 
 # Esta função lê de um ficheiro no formato JSON o dicionário dos utilizadores
 def readback_users(file):
-    with open(file, "r") as outfile:
-        data = json.load(outfile)
-    return data
+    try:
+        with open(file, "r") as outfile:
+            data = json.load(outfile)
+        return data
+    except FileNotFoundError:
+        return {}
 
 def dump_frases_keywords(DB_frases, DB_Keywords, file):
     with open(file, "w") as outfile:
@@ -131,6 +134,9 @@ def dump_frases_keywords(DB_frases, DB_Keywords, file):
 
 
 def readback_frases_keywords(file):
-    with open(file, "r") as outfile:
-        Tmp = json.load(outfile)
-        return Tmp["frases"], Tmp["keywords"]
+    try:
+        with open(file, "r") as outfile:
+            Tmp = json.load(outfile)
+            return Tmp["frases"], Tmp["keywords"]
+    except FileNotFoundError:
+        return None, None
