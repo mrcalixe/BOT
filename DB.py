@@ -59,7 +59,7 @@ class DB_Keywords:
         Assim, o Bot pode comparar com frases futuras se as mesmas palavras apareceram e obter uma resposta mais acertada.
     '''
 
-    def __init__(self, db):
+    def __init__(self, db = None):
         if db:
             self.db = db
         else:
@@ -97,15 +97,20 @@ class Users_DB:
     # Visto que não existe a função has_key no dicionário, basta tentar aceder à chave e caso haja uma exceção significa que não existe entrada
     def check_user(self, user):
         try:
-            t = self.users[user]
-            return True
+            if self.users[user]:
+                return True
+            else:
+                return True
         except KeyError:
             return False
 
     # Adiciona uma entrada de um utilizador.
     # Nesta entrada ainda vai existir um log com as vezes que este utilizador já utilizou o BOT, bem como o tema das conversas.
     def add_user(self, user):
-        self.users[user] = {'state': State()}
+        if self.check_user(user):
+            pass
+        else:
+            self.users[user] = {'state': State()}
 
     def add_frase(self, user, frase):
         try:
@@ -123,7 +128,7 @@ def dump_users(users_db, file):
 def readback_users(file):
     try:
         with open(file, "rb") as outfile:
-            data = pickle.loads(outfile)
+            data = pickle.load(outfile)
         return data
     except FileNotFoundError:
         return Users_DB()

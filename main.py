@@ -77,12 +77,16 @@ def main(args):
 def first_conversation():
     # Perguntar se quer continuar anonimo ou com utilizador normal
     global current_user
+    global users_db
     n = input("Introduza o seu nome, ou prima ENTER para continuar anónimo:\nNome: ")
     if n != "":
-        if Users_DB.check_user(n):
+        if users_db.check_user(n):
+            print("Check user True")
             print("Bem-vindo de volta "+ n +".")
         else:
+            print("Check user False")
             print("Bem-vindo "+ n +", eu sou um Bot :)")
+            users_db.add_user(n)
         current_user = n
     else:
         users_db.add_user(n)
