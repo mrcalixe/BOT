@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import json
+import json, pickle
 from State import State
 
 
@@ -116,17 +116,17 @@ class Users_DB:
 
 # Esta função escreve num ficheiro em formato JSON o dicionário dos utilizadores
 def dump_users(users_db, file):
-    with open(file, "w+") as outfile:
-        json.dump(users_db, outfile)
+    with open(file, "wb") as outfile:
+        outfile.write(pickle.dumps(users_db))
 
 # Esta função lê de um ficheiro no formato JSON o dicionário dos utilizadores
 def readback_users(file):
     try:
-        with open(file, "r") as outfile:
-            data = json.load(outfile)
+        with open(file, "rb") as outfile:
+            data = pickle.loads(outfile)
         return data
     except FileNotFoundError:
-        return {}
+        return Users_DB()
 
 def dump_frases_keywords(DB_frases, DB_Keywords, file):
     with open(file, "w") as outfile:
@@ -139,4 +139,4 @@ def readback_frases_keywords(file):
             Tmp = json.load(outfile)
             return Tmp["frases"], Tmp["keywords"]
     except FileNotFoundError:
-        return None, None
+        return {}, {}
