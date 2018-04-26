@@ -43,6 +43,7 @@ Nota: para abrir um PowerShell em modo administrador, basta carregar no menu ini
     cd BOT
     git submodule init
     git submodule update
+    git config submodule.FreeLing.active false
     cd Freeling
     sudo apt-get install build-essential automake autoconf libtool
     autoreconf --install
