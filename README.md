@@ -48,7 +48,7 @@ Nota: para abrir um PowerShell em modo administrador, basta carregar no menu ini
     sudo apt-get install build-essential automake autoconf libtool
     autoreconf --install
     ./configure
-    make
+    make -j 4
     sudo make install
     cd APIs/python3
     make
