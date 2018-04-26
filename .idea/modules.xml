@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/BOT.iml" filepath="$PROJECT_DIR$/.idea/BOT.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../CANOBD/.idea/CANOBD.iml" filepath="$PROJECT_DIR$/../CANOBD/.idea/CANOBD.iml" />
     </modules>
   </component>
 </project>

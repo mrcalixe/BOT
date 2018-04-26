@@ -8,8 +8,10 @@ from FreeLing_Client.freeling_client import Client
 from DB import DB_Keywords, DB_Frases, Users_DB, readback_users, readback_frases_keywords, dump_frases_keywords, \
     dump_users
 
-current_user = "Utilizador"  # type: str
-bot_name = "Bot"             # type: str
+import Configurations as Conf
+
+current_user = Conf.default_user
+bot_name = Conf.bot_name
 
 
 users_db = None
@@ -43,8 +45,8 @@ def main(args):
     global current_user
     global sock
     if len(args) == 1:
-        host = 'localhost'
-        port = 1234
+        host = Conf.default_ip
+        port = Conf.default_port
     else:
         host = args[1]
         port = int(args[2])
