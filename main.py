@@ -13,8 +13,8 @@ bot_name = "Bot"             # type: str
 
 
 users_db = None
-frases_db = None
-keywords_db = None
+frases_db = DB_Frases()
+keywords_db = DB_Keywords()
 #known_db = None
 
 sock = None
@@ -28,10 +28,8 @@ def init_dbs():
     global current_user
     users_db = Users_DB()
     try:
-        users_db.users = readback_users("users_db.json")
-        frases, keywords = readback_frases_keywords("frases_keywords_train.json")
-        frases_db = DB_Frases(frases)
-        keywords_db = DB_Keywords(keywords)
+        users_db = readback_users("users_db.json")
+        frases_db, keywords_db = readback_frases_keywords("frases_keywords_train.json")
     except AttributeError and FileNotFoundError and json.decoder.JSONDecodeError:
         pass
 
@@ -71,22 +69,21 @@ def main(args):
         pass
     finally:
         dump_frases_keywords(frases_db, keywords_db, 'frases_keywords_db.json')
-        dump_users(users_db.users, "users_db.json")
+        dump_users(users_db, "users_db.json")
         sock.close()
 
 
 
 def first_conversation():
     # Perguntar se quer continuar anonimo ou com utilizador normal
-
-    n = input("Introduza o seu nome, ou prima ENTER para continuar anónimo:\n    Nome: ")
+    global current_user
+    n = input("Introduza o seu nome, ou prima ENTER para continuar anónimo:\nNome: ")
     if n != "":
-        try:
-            print("Bem-vindo de volta", n+".")
-            global current_user
-            current_user = n
-        except:
-            raise ValueError("Erro na função \"input\"")
+        if Users_DB.check_user(n):
+            print("Bem-vindo de volta "+ n +".")
+        else:
+            print("Bem-vindo "+ n +", eu sou um Bot :)")
+        current_user = n
     else:
         users_db.add_user(n)
         print("Bem-vindo, eu sou um Bot :)")

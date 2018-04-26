@@ -137,6 +137,6 @@ def readback_frases_keywords(file):
     try:
         with open(file, "r") as outfile:
             Tmp = json.load(outfile)
-            return Tmp["frases"], Tmp["keywords"]
+            return DB_Frases(Tmp["frases"]), DB_Keywords(Tmp["keywords"])
     except FileNotFoundError:
-        return {}, {}
+        return DB_Frases(), DB_Keywords()
