@@ -1,0 +1,37 @@
+<Lexicon>
+ner-f80-rich-5abs.lex
+</Lexicon>
+<ModelFile>
+ner-f80-rich-5abs.abm
+</ModelFile>
+<RGF>
+ner-f80.rgf
+</RGF>
+<NE_Tag>
+NP00000
+</NE_Tag>
+<Classifier>
+AdaBoost
+</Classifier>
+<Classes>
+0 B 1 I 2 O
+</Classes>
+<UseSoftMax>
+yes
+</UseSoftMax>
+<InitialProb>
+B 0.04781
+I 0
+O 0.952036
+</InitialProb>
+<TransitionProb>
+B B 0.00595325
+B I 0.422971
+B O 0.571076
+I B 0.00454466
+I I 0.495368
+I O 0.500087
+O B 0.0459893
+O I 0
+O O 0.954011
+</TransitionProb>
