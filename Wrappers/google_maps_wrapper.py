@@ -61,6 +61,7 @@ def escolhe_opcao(resultado):
     return opcoes[op-1]
 
 def procura_lugar(lugar):
+    print("DEBUG:GMAPS:input", lugar)
     global gmaps, geo_loc, language
     resultado = gmaps.places(lugar, location=geo_loc, language=language)
     if len(resultado['results']) > 1:

@@ -33,27 +33,26 @@ Nota: para abrir um PowerShell em modo administrador, basta carregar no menu ini
     E instalar a aplicação Ubuntu da loja Microsoft.
 3. Abrir a aplicação Ubuntu e executar o seguinte comando:
     ```bash
-    sudo apt update ; sudo apt upgrade ; sudo apt install git python-dev python3-dev python3-pip python-pip gcc g++ build-essential swig python3-enchant
-    sudo pip3 install -U numpy nltk wikipedia
+    sudo apt update ; sudo apt upgrade ; sudo apt install install build-essential automake autoconf libtool git python-dev python3-dev python3-pip python-pip gcc g++ build-essential swig python3-enchant libboost-all-dev libicu-dev zlib1g-dev 
+    sudo -H pip3 -H install --upgrade pip    
+    sudo -H pip3 install -U numpy nltk wikipedia gmaps rdflib SPARQLWrapper
     ```
 4. Seguir através deste [**tutorial**](https://gist.github.com/dentechy/de2be62b55cfd234681921d5a8b6be11) como ativar e configurar o SSH no Ubuntu
+5. Instalar Git no windows através deste [**link**](https://git-scm.com/download/win)
 5. Instalação do BOT, FreeLing e API para python.
     ```bash
     git clone https://github.com/mrcalixe/BOT.git
-    cd BOT
-    git submodule init
-    git submodule update
-    git config submodule.FreeLing.active false
-    cd Freeling
-    sudo apt-get install build-essential automake autoconf libtool
+    cd BOT/Freeling
     autoreconf --install
     ./configure
     make
     sudo make install
     cd APIs/python3
     make
+    mv _freeling.so _pyfreeling.so 
     ```
-6. Abrir o PyCharm, abrir o projeto, e configurar o interpretador remoto através de SSH.
+6. Abrir o PyCharm e configurar o interpretador remoto através de SSH.
+7. No PyCharm, fazer o Checkout do projeto através do Git, configurar o projeto para usar o interpretador remoto e mapear as pastas para o Ubuntu.
 
 
 ## Módulos

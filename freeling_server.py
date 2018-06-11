@@ -27,7 +27,7 @@ def server():
             print("\nDEBUG:Recebi:", str(data))
             send = None
             if 'pos' in loaded.keys():
-                send = PoS(loaded['pos'], tk, sp, morfo, tagger, sense, wsd, parser)
+                send = PoS(loaded['pos'], tk, sp, morfo, tagger, sense, wsd, parser, debug=True)
 
             elif 'token' in loaded.keys():
                 send = str(tk.tokenize(loaded['token']))
@@ -76,7 +76,7 @@ def main(args):
         elif cmd == "":
             pass
         else:
-            print(PoS(cmd, tk, sp, morfo, tagger, sense, wsd, parser))
+            print(PoS(cmd, tk, sp, morfo, tagger, sense, wsd, parser, debug=True))
 
 if __name__ == '__main__':
     main(sys.argv)

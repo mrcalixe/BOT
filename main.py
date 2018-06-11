@@ -14,6 +14,7 @@ current_user = Conf.default_user
 bot_name = Conf.bot_name
 
 
+
 users_db = None
 frases_db = DB_Frases()
 keywords_db = DB_Keywords()
@@ -99,30 +100,48 @@ def call_func(func, args):
     return getattr(Actions, func)(dict=args)
 
 
+def substitui_por_originais(res, tagged, frase):
+    for key in res:
+        d = res[key]
+        for k in d:
+            v = d[k]
+            for (lemma, tag, word) in tagged:
+                if v == lemma:
+                    print("SPO:A substituir", lemma, "por", word)
+                    d[k] = word
+        res[key] = d
+    return res
+
+
 def f(s):
     global sock
 
-    tagged = parse_analise(sock.PoS(s))
+    tagged = sock.PoS(s)
+    tagged2 = parse_analise(tagged)
 
-    res = verifica(tagged)
+    res = verifica(tagged2)
     print("Expressões:", res)
 
     if res != {}:
         key = random.choice(list(res.keys()))
+        res = substitui_por_originais(res, tagged, s)
         return call_func(Regexs[key]['action'], res[key])
     else:
-        res_esp = verifica_especiais(tagged)
+        res_esp = verifica_especiais(tagged2)
         print("Expressões_Especiais:", res_esp)
 
         if res_esp != {}:
             key = random.choice(list(res_esp.keys()))
+            res = substitui_por_originais(res, tagged, s)
             return call_func(Regexs_Especiais[key]['action'], res_esp[key])
         else:
-            res_back = verifica_backup(tagged)
+            res_back = verifica_backup(tagged2)
+            res = substitui_por_originais(res, tagged, s)
             print("Expressões_backup:", res_back)
 
             if res_back != {}:
                 key = random.choice(list(res_back.keys()))
+                res = substitui_por_originais(res, tagged, s)
                 return call_func(Regexs_Backup[key]['action'], res_back[key])
             else:
                 return 'Não consegui entender...'

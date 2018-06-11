@@ -130,8 +130,8 @@ def compile_regexs(Regexs):
 
 def parse_analise(analise):
     s = r''
-    for (word, tag) in analise:
-        aux = tag + r':' + word + r' '
+    for (lemma, tag, word) in analise:
+        aux = tag + r':' + lemma + r' '
         s = s + aux
     return s[:(len(s)) - 1]
 

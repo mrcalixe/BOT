@@ -66,7 +66,7 @@ def ProcessSentences(ls, debug=False):
             #  print analysis selected by the tagger
             lem, sens = extract_lemma_and_sense(w)
             estado = estado + "|-- Análise selecionada: (" + lem + "," + w.get_tag() + "," + sens + ")\n"
-            processed.append((w.get_lemma(), w.get_tag()))
+            processed.append((w.get_lemma(), w.get_tag(), w.get_span_start(), w.get_span_finish()))
         # sentence separator
         #estado = estado + "\n"
     estado += '--------------------------------------------------------------------------------------'

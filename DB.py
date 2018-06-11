@@ -141,7 +141,7 @@ def dump_frases_keywords(DB_frases, DB_Keywords, file):
 def readback_frases_keywords(file):
     try:
         with open(file, "r") as outfile:
-            Tmp = json.load(outfile)
+            Tmp = json.load(outfile, )
             return DB_Frases(Tmp["frases"]), DB_Keywords(Tmp["keywords"])
     except FileNotFoundError:
         return DB_Frases(), DB_Keywords()
