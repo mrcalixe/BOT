@@ -3,6 +3,7 @@
 
 import Wrappers.wikipedia_wrapper as wiki
 import Wrappers.google_maps_wrapper as gmaps
+import nltk
 
 
 def pergunta_nome(**kargs):
@@ -36,3 +37,23 @@ def bem_vindo(**kargs):
 def adeus(**kargs):
     print(__name__, ':kargs:', kargs)
     return 'Até à próxima :)'
+
+#TODO implementar a feature extraction do que foi analisado
+#TODO implementar aqui o classificador
+#TODO Criar um conjunto de treino
+#TODO Criar um conjunto de teste
+
+def features(pos, dep_tree, frase, exps_match):
+    #TODO O que tirar de uma análise que seja relevante para a escolha de uma ação
+    #TODO talvez começar por identificar o tipo de frase: Interrogação, Exclamação, etc
+    #TODO aceder à BD de conhecimento local para determinar se as keywords extraídas dão alguma dica
+    features = {}
+    #Dummy approach
+    exps = list(exps_match.keys())
+    features['exp'] = exps[0]
+    return features
+
+
+train = []
+
+classifier = nltk.classify.NaiveBayesClassifier.train(train)

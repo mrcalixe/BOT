@@ -51,19 +51,36 @@ def generate_Nodes_Edges(Tree, Nodos, Arestas):
     #Tree é sempre uma lista com nodos
     for nodo in Tree:
         Nodos += [nodo['word']]
+        if 'token' in nodo:
+            del(nodo['token'])
         if 'children' in nodo.keys():
             for filho in nodo['children']:
+                if 'token' in filho:
+                    del (filho['token'])
                 Arestas += [(nodo['word'], filho['word'],filho['function'])]
-                Nodos, Arestas = generate_Nodes_Edges([filho], Nodos, Arestas)
-    return Nodos, Arestas
+                Tree, Nodos, Arestas = generate_Nodes_Edges([filho], Nodos, Arestas)
+    return Tree, Nodos, Arestas
 
+
+'''
+Dicionário com a Árvore de Dependências e nodos com as respetivas funções
+ 
+'''
 
 
 def extract(analysis, view=True):
     # Árvore de dependências
-    dep_tree = analysis['dependencies']
+    analise = analysis['dependencies']
+
+    dep_tree = {}
+
     dot = Digraph()
-    nodes, edges = generate_Nodes_Edges(dep_tree, [], [])
+    tree, nodes, edges = generate_Nodes_Edges(analise, [], [])
+
+    dep_tree['nodos'] = nodes
+    dep_tree['tree'] = tree
+
+
     for n in nodes: dot.node(n)
     for (a, b, c) in edges:
         dot.edge(a, b, label=c)
@@ -76,4 +93,4 @@ def extract(analysis, view=True):
         tk = tokens[i]
         pos += [(tk['lemma'], tk['tag'], tk['form'])]
 
-    return dot, pos
+    return dep_tree, pos

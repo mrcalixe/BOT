@@ -4,7 +4,7 @@
 import sys, json, Actions
 from aux_functions import *
 from Machine_Learning.ml import *
-from FreeLing_Client.freeling_client import Client
+import FreeLing_Client.freeling_client as freeling
 from DB import DB_Keywords, DB_Frases, Users_DB, readback_users, readback_frases_keywords, dump_frases_keywords, \
     dump_users
 
@@ -20,7 +20,7 @@ frases_db = DB_Frases()
 keywords_db = DB_Keywords()
 #known_db = None
 
-sock = None
+#sock = None
 
 
 def init_dbs():
@@ -44,7 +44,7 @@ def main(args):
     global know_db
     global users_db
     global current_user
-    global sock
+    #global sock
     if len(args) == 1:
         host = Conf.default_ip
         port = Conf.default_port
@@ -52,7 +52,7 @@ def main(args):
         host = args[1]
         port = int(args[2])
 
-    sock = Client(host, port)
+    #sock = Client(host, port)
 
     init_dbs()
 
@@ -73,7 +73,7 @@ def main(args):
     finally:
         dump_frases_keywords(frases_db, keywords_db, 'frases_keywords_db.json')
         dump_users(users_db, "users_db.json")
-        sock.close()
+        #sock.close()
 
 
 
@@ -114,12 +114,15 @@ def substitui_por_originais(res, tagged, frase):
 
 
 def f(s):
-    global sock
+    # Mudado para o novo modelo
+    analyzed = freeling.analyse(s)
+    dot, tagged = freeling.extract(analyzed['sentences'][0])
+    parsed_tag = parse_analise(tagged)
 
-    tagged = sock.PoS(s)
-    tagged2 = parse_analise(tagged)
+    #TODO falta a parte da verificação e ação
+    #TODO implementar um classificador para escolher ações do que foi analisado
 
-    res = verifica(tagged2)
+    res = verifica(parsed_tag)
     print("Expressões:", res)
 
     if res != {}:
@@ -127,7 +130,7 @@ def f(s):
         res = substitui_por_originais(res, tagged, s)
         return call_func(Regexs[key]['action'], res[key])
     else:
-        res_esp = verifica_especiais(tagged2)
+        res_esp = verifica_especiais(parsed_tag)
         print("Expressões_Especiais:", res_esp)
 
         if res_esp != {}:
@@ -135,7 +138,7 @@ def f(s):
             res = substitui_por_originais(res, tagged, s)
             return call_func(Regexs_Especiais[key]['action'], res_esp[key])
         else:
-            res_back = verifica_backup(tagged2)
+            res_back = verifica_backup(parsed_tag)
             res = substitui_por_originais(res, tagged, s)
             print("Expressões_backup:", res_back)
 
