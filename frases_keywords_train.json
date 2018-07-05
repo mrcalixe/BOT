@@ -1,11 +1,11 @@
 { "frases" : {
-	"Onde fica Braga?" : {"action" : "procura_lugar", "keywords" : ["lugar", "verbo"]},
-	"Quem e Mozart?"   : {"action" : "procura_pessoa", "keywords" : ["nome", "verbo"]},
-	"Onde se situa o Porto?" : {"action" : "procura_lugar", "keywords" : ["lugar", "verbo"]}
+	"Onde fica Braga?" : {"action" : "procura_lugar", "keywords" : ["braga"]},
+	"Quem é Mozart?"   : {"action" : "procura_pessoa", "keywords" : ["Mozart"]},
+	"Onde se situa o Porto?" : {"action" : "procura_lugar", "keywords" : ["Porto"]}
 },
   "keywords" : {
-  	"braga" : {"CAT": "NP", "ORTH": "Braga", "TYPE": "CITY"},
-  	"porto" : {"CAT": "NP", "ORTH": "Porto", "TYPE": "CITY"},
-  	"mozart" : {"CAT": "NP", "ORTH": "Mozart", "TYPE": "PERSON"}
+  	"braga" : {"CAT": "NP", "ORTH": "Braga", "TYPE": "locality"},
+  	"porto" : {"CAT": "NP", "ORTH": "Porto", "TYPE": "locality"},
+  	"mozart" : {"CAT": "NP", "ORTH": "Mozart", "TYPE": "person"}
   }
 }

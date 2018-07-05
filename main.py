@@ -18,9 +18,6 @@ bot_name = Conf.bot_name
 users_db = None
 frases_db = DB_Frases()
 keywords_db = DB_Keywords()
-#known_db = None
-
-#sock = None
 
 
 def init_dbs():
@@ -44,15 +41,7 @@ def main(args):
     global know_db
     global users_db
     global current_user
-    #global sock
-    if len(args) == 1:
-        host = Conf.default_ip
-        port = Conf.default_port
-    else:
-        host = args[1]
-        port = int(args[2])
 
-    #sock = Client(host, port)
 
     init_dbs()
 
@@ -73,7 +62,6 @@ def main(args):
     finally:
         dump_frases_keywords(frases_db, keywords_db, 'frases_keywords_db.json')
         dump_users(users_db, "users_db.json")
-        #sock.close()
 
 
 

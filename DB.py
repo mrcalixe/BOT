@@ -28,10 +28,24 @@ class DB_Frases:
 
     def check_key(self, key):
         try:
-            self.db[key]
+            r = self.db[key]
             return True
         except KeyError:
             return False
+
+    def get(self, key):
+        try:
+            r = self.db[key]
+            return r
+        except KeyError:
+            return None
+
+    def get_by_keywords(self, keys):
+        r = []
+        for key in self.db:
+            if keys in self.db[key]['keywords']:
+                r.append(self.db[key])
+        return r
 
     def add(self, key, action, keywords):
         self.db[key] = {'action': action, 'keywords': keywords}
@@ -44,7 +58,7 @@ class DB_Frases:
 
     def dump(self, file):
         '''Escreve num ficheiro em formato JSON'''
-        json.dump(self.db, file)
+        json.dump(self.db, file, ensure_ascii=False)
 
     def readback(self, file):
         '''Lê de um ficheiro no formato JSON'''
@@ -67,10 +81,24 @@ class DB_Keywords:
 
     def check_key(self, key):
         try:
-            self.db[key]
+            r = self.db[key]
             return True
         except KeyError:
             return False
+
+    def get(self, key):
+        try:
+            r = self.db[key]
+            return r
+        except KeyError:
+            return None
+
+    def get_by_type(self, type):
+        r = []
+        for key in self.db:
+            if self.db[key]['TYPE'] == type:
+                r.append(self.db[key])
+        return r
 
     def add(self, key, lista):
         self.db[key] = lista
@@ -81,7 +109,7 @@ class DB_Keywords:
 
     def dump(self, file):
         '''Escreve num ficheiro em formato JSON'''
-        json.dump(self.db, file)
+        json.dump(self.db, file, ensure_ascii=False)
 
     def readback(self, file):
         '''Lê de um ficheiro no formato JSON'''
@@ -135,7 +163,7 @@ def readback_users(file):
 
 def dump_frases_keywords(DB_frases, DB_Keywords, file):
     with open(file, "w") as outfile:
-        json.dump({'frases': DB_frases.db, 'keywords': DB_Keywords.db}, outfile)
+        json.dump({'frases': DB_frases.db, 'keywords': DB_Keywords.db}, outfile, ensure_ascii=False)
 
 
 def readback_frases_keywords(file):

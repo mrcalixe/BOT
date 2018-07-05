@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54094adf-2760-470d-97b4-bf8956ae8712" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/DB2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Football_DB.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ideias/ml_rl.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PDFs/deep_reinforcement_learning_for_dialogue_generation.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PDFs/p31189-zhang.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Configurations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Configurations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Exps_Regulares/new_reg_exps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exps_Regulares/new_reg_exps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FreeLing_Client/freeling_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/FreeLing_Client/freeling_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wrappers/google_maps_wrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Wrappers/google_maps_wrapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frases_keywords_train.json" beforeDir="false" afterPath="$PROJECT_DIR$/frases_keywords_train.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/regex_debugger.py" beforeDir="false" afterPath="$PROJECT_DIR$/regex_debugger.py" afterDir="false" />
     </list>
@@ -26,8 +34,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2204">
-              <caret line="123" selection-start-line="123" selection-end-line="123" />
+            <state relative-caret-position="2527">
+              <caret line="140" column="18" selection-start-line="140" selection-start-column="18" selection-end-line="140" selection-end-column="18" />
               <folding>
                 <element signature="e#44#69#0" expanded="true" />
               </folding>
@@ -38,8 +46,8 @@
       <file leaf-file-name="reg_exps.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Exps_Regulares/reg_exps.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2774">
-              <caret line="146" column="4" selection-start-line="146" selection-start-column="4" selection-end-line="146" selection-end-column="4" />
+            <state relative-caret-position="2622">
+              <caret line="138" column="30" selection-start-line="138" selection-start-column="30" selection-end-line="138" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -47,19 +55,28 @@
       <file leaf-file-name="new_reg_exps.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Exps_Regulares/new_reg_exps.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2067">
-              <caret line="165" selection-start-line="165" selection-end-line="165" />
+            <state relative-caret-position="513">
+              <caret line="225" column="23" selection-start-line="225" selection-start-column="23" selection-end-line="225" selection-end-column="23" />
+              <folding>
+                <element signature="e#1138#2095#0" />
+                <element signature="e#1708#3028#0" />
+                <element signature="e#3064#3919#0" />
+                <element signature="e#3961#4290#0" />
+                <element signature="e#4335#4687#0" />
+                <element signature="e#4722#5022#0" />
+                <element signature="e#5064#5398#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Actions.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Actions.py">
+      <file leaf-file-name="Football_DB.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Football_DB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+            <state relative-caret-position="209">
+              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
               <folding>
-                <element signature="e#44#85#0" expanded="true" />
+                <element signature="e#0#29#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,20 +85,63 @@
       <file leaf-file-name="regex_debugger.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/regex_debugger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+            <state relative-caret-position="228">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Actions.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Actions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-19">
+              <caret line="65" column="12" lean-forward="true" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
               <folding>
-                <element signature="e#44#89#0" expanded="true" />
+                <element signature="e#44#85#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="freeling_client.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FreeLing_Client/freeling_client.py">
+      <file leaf-file-name="google_maps_wrapper.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Wrappers/google_maps_wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+            <state relative-caret-position="779">
+              <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DB.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DB.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1273">
+              <caret line="174" column="41" selection-start-line="169" selection-start-column="4" selection-end-line="174" selection-end-column="41" />
+              <folding>
+                <element signature="e#111#1919#0" />
+                <element signature="e#1945#3321#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DB2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DB2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1064">
+              <caret line="59" column="25" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
+              <folding>
+                <element signature="e#25#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="frases_keywords_train.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frases_keywords_train.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -116,9 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/freeling_wrapper.py" />
-        <option value="$PROJECT_DIR$/FreeLing/freeling_client.py" />
-        <option value="$PROJECT_DIR$/FreeLing/freeling_server.py" />
         <option value="$PROJECT_DIR$/Ideias/classificador_genero.py" />
         <option value="$PROJECT_DIR$/Latex/Modelo_Linguistico.tex" />
         <option value="$PROJECT_DIR$/frases_train.txt" />
@@ -149,24 +206,27 @@
         <option value="$PROJECT_DIR$/Auxiliares/aux_functions.py" />
         <option value="$PROJECT_DIR$/DBs/aux_functions.py" />
         <option value="$PROJECT_DIR$/aux_functions.py" />
-        <option value="$PROJECT_DIR$/Configurations/__init__.py" />
         <option value="$PROJECT_DIR$/Ideias/sparql_db.py" />
         <option value="$PROJECT_DIR$/../untitled/app.py" />
         <option value="$PROJECT_DIR$/../Web_Bot/app.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/sparql_db.py" />
-        <option value="$PROJECT_DIR$/frases_keywords_train.json" />
-        <option value="$PROJECT_DIR$/DB.py" />
-        <option value="$PROJECT_DIR$/Wrappers/google_maps_wrapper.py" />
         <option value="$PROJECT_DIR$/freeling_server.py" />
         <option value="$PROJECT_DIR$/freeling_debugger.py" />
         <option value="$PROJECT_DIR$/Wrappers/freeling_wrapper.py" />
         <option value="$PROJECT_DIR$/Exps_Regulares/reg_exps.py" />
-        <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/Exps_Regulares/new_reg_exps.py" />
         <option value="$PROJECT_DIR$/FreeLing_Client/freeling_client.py" />
+        <option value="$PROJECT_DIR$/DB.py" />
+        <option value="$PROJECT_DIR$/Ideias/ml_rl.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/Configurations/__init__.py" />
+        <option value="$PROJECT_DIR$/frases_keywords_train.json" />
+        <option value="$PROJECT_DIR$/DB2.py" />
         <option value="$PROJECT_DIR$/regex_debugger.py" />
+        <option value="$PROJECT_DIR$/Wrappers/google_maps_wrapper.py" />
         <option value="$PROJECT_DIR$/Actions.py" />
+        <option value="$PROJECT_DIR$/Exps_Regulares/new_reg_exps.py" />
+        <option value="$PROJECT_DIR$/Football_DB.py" />
       </list>
     </option>
   </component>
@@ -201,12 +261,12 @@
             <path>
               <item name="BOT" type="b2602c69:ProjectViewProjectNode" />
               <item name="BOT" type="462c0819:PsiDirectoryNode" />
-              <item name="Exps_Regulares" type="462c0819:PsiDirectoryNode" />
+              <item name="Configurations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BOT" type="b2602c69:ProjectViewProjectNode" />
               <item name="BOT" type="462c0819:PsiDirectoryNode" />
-              <item name="FreeLing_Client" type="462c0819:PsiDirectoryNode" />
+              <item name="Exps_Regulares" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BOT" type="b2602c69:ProjectViewProjectNode" />
@@ -235,11 +295,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Nextcloud\Tese\BOT\PDFs" />
       <recent name="D:\Nextcloud\Tese\BOT" />
       <recent name="C:\Users\Carlos Pereira\PycharmProjects\BOT" />
       <recent name="C:\Users\Carlos Pereira\PycharmProjects\BOT\DBs" />
       <recent name="C:\Users\Carlos Pereira\PycharmProjects\BOT\Bot" />
-      <recent name="C:\Users\Carlos Pereira\PycharmProjects\BOT\bin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -500,22 +560,38 @@
       <option name="project" value="LOCAL" />
       <updated>1528734680034</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Correções no novo modelo Linguístico.&#10;Alteração na MAIN de análise e parsing através do novo modelo.&#10;Começo do classificador para as ações a tomar após as verificações.">
+      <created>1528819159202</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1528819159203</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.32837406" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="File Transfer" order="10" weight="0.32403433" />
+      <window_info anchor="bottom" id="File Transfer" order="10" weight="0.32199788" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32943678" />
-      <window_info anchor="bottom" id="Python Console" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="11" weight="0.32939914" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32943678" />
       <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.20563674" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.31732777" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="SciView" order="5" />
@@ -529,40 +605,40 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32996634" />
       <window_info anchor="right" id="R Packages" order="3" />
-      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="7" side_tool="true" weight="0.24791667" />
+      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="7" side_tool="true" weight="0.246875" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32943678" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32731137" />
     </layout>
     <layout-to-restore>
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32731137" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20563674" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31732777" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32943678" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32943678" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="File Transfer" order="10" weight="0.32412326" />
-      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="R Graphics" order="6" />
+      <window_info anchor="bottom" id="File Transfer" order="10" weight="0.32199788" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32943678" />
       <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32996634" />
       <window_info anchor="right" id="R Packages" order="3" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32731137" />
-      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="7" side_tool="true" weight="0.24791667" />
+      <window_info anchor="bottom" id="Python Console" order="11" weight="0.32939914" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32943678" />
+      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="7" side_tool="true" weight="0.246875" />
+      <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="bottom" id="Terminal" order="12" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.32837406" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32943678" />
-      <window_info anchor="right" id="SciView" order="5" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="bottom" id="Python Console" order="11" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32943678" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +648,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_NEW_TODO" value="false" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/APIs/FreeLing4" />
       <path value="$PROJECT_DIR$/FreeLing" />
@@ -595,7 +670,8 @@
     <MESSAGE value="Atualização" />
     <MESSAGE value="Atualização e correção da importação/exportação de módulos" />
     <MESSAGE value="Criação do novo modelo linguística sugerido pelo Professor JJ.&#10;Alteração da utilização do FreeLing para o cliente/servidor incorporado para utilização na bash.&#10;Atualização para o uso da nova incorporação cliente/servidor." />
-    <option name="LAST_COMMIT_MESSAGE" value="Criação do novo modelo linguística sugerido pelo Professor JJ.&#10;Alteração da utilização do FreeLing para o cliente/servidor incorporado para utilização na bash.&#10;Atualização para o uso da nova incorporação cliente/servidor." />
+    <MESSAGE value="Correções no novo modelo Linguístico.&#10;Alteração na MAIN de análise e parsing através do novo modelo.&#10;Começo do classificador para as ações a tomar após as verificações." />
+    <option name="LAST_COMMIT_MESSAGE" value="Correções no novo modelo Linguístico.&#10;Alteração na MAIN de análise e parsing através do novo modelo.&#10;Começo do classificador para as ações a tomar após as verificações." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -603,27 +679,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2166">
-          <caret line="114" column="37" lean-forward="true" selection-start-line="114" selection-start-column="37" selection-end-line="114" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sparql_db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2128">
-          <caret line="112" column="12" selection-start-line="112" selection-start-column="12" selection-end-line="112" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Apontamentos/Notas.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="876">
@@ -736,13 +791,6 @@
     <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/674474046/apt_inst.py" />
     <entry file="file://$PROJECT_DIR$/../untitled/app.py" />
     <entry file="file://$PROJECT_DIR$/../Web_Bot/app.py" />
-    <entry file="file://$PROJECT_DIR$/Configurations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -834,13 +882,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frases_keywords_train.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/freeling_server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -848,24 +889,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Wrappers/google_maps_wrapper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/freeling_debugger.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1045">
           <caret line="55" column="52" selection-start-line="55" selection-start-column="52" selection-end-line="55" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="131" column="19" lean-forward="true" selection-start-line="131" selection-start-column="19" selection-end-line="131" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -883,23 +910,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Exps_Regulares/reg_exps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2774">
-          <caret line="146" column="4" selection-start-line="146" selection-start-column="4" selection-end-line="146" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2204">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
-          <folding>
-            <element signature="e#44#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Machine_Learning/ml.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
@@ -907,36 +917,118 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Exps_Regulares/new_reg_exps.py">
+    <entry file="file://$PROJECT_DIR$/Ideias/ml_rl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2067">
-          <caret line="165" selection-start-line="165" selection-end-line="165" />
+        <state relative-caret-position="285">
+          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/regex_debugger.py">
+    <entry file="file://$PROJECT_DIR$/Exps_Regulares/reg_exps.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        <state relative-caret-position="2622">
+          <caret line="138" column="30" selection-start-line="138" selection-start-column="30" selection-end-line="138" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2527">
+          <caret line="140" column="18" selection-start-line="140" selection-start-column="18" selection-end-line="140" selection-end-column="18" />
           <folding>
-            <element signature="e#44#89#0" expanded="true" />
+            <element signature="e#44#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FreeLing_Client/freeling_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="855">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1273">
+          <caret line="174" column="41" selection-start-line="169" selection-start-column="4" selection-end-line="174" selection-end-column="41" />
+          <folding>
+            <element signature="e#111#1919#0" />
+            <element signature="e#1945#3321#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frases_keywords_train.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DB2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1064">
+          <caret line="59" column="25" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
+          <folding>
+            <element signature="e#25#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Configurations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wrappers/google_maps_wrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Exps_Regulares/new_reg_exps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="225" column="23" selection-start-line="225" selection-start-column="23" selection-end-line="225" selection-end-column="23" />
+          <folding>
+            <element signature="e#1138#2095#0" />
+            <element signature="e#1708#3028#0" />
+            <element signature="e#3064#3919#0" />
+            <element signature="e#3961#4290#0" />
+            <element signature="e#4335#4687#0" />
+            <element signature="e#4722#5022#0" />
+            <element signature="e#5064#5398#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/regex_debugger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Actions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+        <state relative-caret-position="-19">
+          <caret line="65" column="12" lean-forward="true" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
           <folding>
             <element signature="e#44#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Football_DB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>

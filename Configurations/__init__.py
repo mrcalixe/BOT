@@ -1,4 +1,7 @@
 default_user = "Utilizador"
-default_ip = "localhost"
-default_port = 1234
-bot_name = "BOT"
+bot_name = "Bot"
+user_db = 'bot_db'
+user_db_password = 'bottese'
+db_schema = 'bot'
+db_ip = '127.0.0.1'
+db_port = 3306

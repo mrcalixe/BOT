@@ -4,8 +4,8 @@ import googlemaps, requests, json
 send_url = 'http://freegeoip.net/json'
 r = requests.get(send_url)
 j = json.loads(r.text)
-lat = j['latitude']
-lon = j['longitude']
+lat = '41.550031'
+lon = '-8.422311'
 geo_loc = (lat, lon)
 language = 'pt-PT'
 
