@@ -15,7 +15,7 @@ cursor = connection.cursor()
 fill_file = 'frases_keywords_train.json'
 
 keywords_insert_string = """INSERT IGNORE INTO Keywords (keyword, orthography, type, cathegory)
-VALUES ('{key}', '{orth}', '{type}', '{cathegory}') 
+VALUES ('{key}', '{orth}', '{type}', '{cathegory}')
 ON DUPLICATE KEY UPDATE orthography='{orth}' , type='{type}' , cathegory='{cathegory}';"""
 
 frases_insert_string = """INSERT IGNORE INTO Frases (frase, action)

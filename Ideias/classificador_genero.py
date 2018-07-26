@@ -1,3 +1,8 @@
+import csv
+import random
+
+import nltk
+
 vogais = 'aeiou'
 consoantes = 'qwrtypsdfghjklzxcvbnm'
 # Ditongos decrescentes

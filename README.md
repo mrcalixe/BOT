@@ -33,8 +33,8 @@ Nota: para abrir um PowerShell em modo administrador, basta carregar no menu ini
     E instalar a aplicação Ubuntu da loja Microsoft.
 3. Abrir a aplicação Ubuntu e executar o seguinte comando:
     ```bash
-    sudo apt update ; sudo apt upgrade ; sudo apt install install build-essential automake autoconf libtool git python-dev python3-dev python3-pip python-pip gcc g++ build-essential swig python3-enchant libboost-all-dev libicu-dev zlib1g-dev 
-    sudo -H pip3 -H install --upgrade pip    
+    sudo apt update ; sudo apt upgrade ; sudo apt install install build-essential automake autoconf libtool git python-dev python3-dev python3-pip python-pip gcc g++ build-essential swig python3-enchant libboost-all-dev libicu-dev zlib1g-dev cmake
+    sudo -H pip3 install --upgrade pip    
     sudo -H pip3 install -U numpy nltk wikipedia gmaps rdflib SPARQLWrapper
     ```
 4. Seguir através deste [**tutorial**](https://gist.github.com/dentechy/de2be62b55cfd234681921d5a8b6be11) como ativar e configurar o SSH no Ubuntu
@@ -43,11 +43,12 @@ Nota: para abrir um PowerShell em modo administrador, basta carregar no menu ini
     ```bash
     git clone https://github.com/mrcalixe/BOT.git
     cd BOT/Freeling
-    autoreconf --install
-    ./configure
+    mkdir build
+    cd build
+    cmake .. 
     make
     sudo make install
-    cd APIs/python3
+    cd ../APIs/python3
     make
     mv _freeling.so _pyfreeling.so 
     ```
@@ -140,7 +141,7 @@ A sintaxe deste módulo é:
 Para correr o programa:
 (Quando não se passam parámetros a este módulo, é assumido o ip localhost e a porta 1234)
 ```bash
-    ./main localhost 1234
+    ./main
 ```
 
 A sintaxe deste módulo é:

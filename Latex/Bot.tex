@@ -1,0 +1,208 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+
+%%% The "real" document content comes below...
+
+\title{Dissertação de Mestrado em colaboração com a Accenture \\
+\large Machine Learning e Processamento de Linguagens Naturais num Bot}
+\author{Carlos António Senra Pereira\\
+\small Orientador: Doutor Luís Filipe Ribeiro Pinto\\
+\small Co-Orientador: Doutor José João Antunes Guimarães Dias de Almeida\\
+\small Orientador na Accenture: Ricardo Perleques\\
+\small Orientador na Accenture: Hugo André Portela}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed  
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\section{Resumo}
+
+Resumo do Bot.
+
+\section{Introdução}
+
+\hspace{11pt} Com a capacidade de hardware cada vez mais evoluída e problemas quer da parte cientifica como problemas do quotidiano, Machine Learning tem sido vista como uma técnica possível para a resolição desses mesmos problemas.
+
+O processamento de Linguagens Naturais é bastante complexo, e ainda mais no ponto de vista de uma máquina determinística. Por isso, utilizando técnicas de Machine Learning é possível construir um modelo capaz de analisar frases morfossintáticamente com bastante precisão.
+
+Através desta análise, podemos tirar grande partido dela no interpretamento das mesmas e assim executar ações correspondentes às frases.
+
+\subsection{Objetivos}
+
+\begin{enumerate}
+\item Construir uma aplicação capaz de analisar e reconhecer frases introduzidas por utilizadores;
+\item Através de um modelo de Machine Learning, analisar essas frases;
+\item Utilizando técnicas de Machine Learning em conjunto com bases de dados de conhecimento, criar um modelo capaz de classificar uma análise e atribuir uma ação.
+\item Construir relações entre sujeito e objeto e através dessas mesmas, gerar todas(ou quase todas) as expressões regulares correspondentes.
+\end{enumerate}
+
+\section{Descrição abstrata do modelo de execução}
+
+\hspace{11pt} Após a análise do problema em questão, foi criado um modelo de execução de um Bot.\\
+
+
+\begin{align*}
+DEF_{\text{Bot}} &::= Regra^* 
+\end{align*}
+\begin{align*}
+Regra ::= antecedente & : ERL \\
+\text{ reação} & : FR^* 
+\end{align*}
+
+
+Onde $FR$ abrevia Função de Reação e $ERL$ significa Expressão Regular Linguística. \\
+
+Com este modelo, é possível escrever uma álgebra de Bot's que permite o uso de vários Bot's na mesma solução, por exemplo, em paralelo, em sequência, etc.
+
+\subsection{Expressões Regulares Linguísticas}
+\hspace{11pt} Estas são as expressões definidas pelo utilizador que irão ser compiladas e interpretadas pelo Bot. \\
+
+\begin{align*}
+ERL &  ::=  EL^*   \\
+EL & ::= IT \quad FR^* \quad | \quad  IT2 \quad  FR^*\\
+IT  &::= ( pal : ER, \quad tag : ER, \quad catch : ER ) \\
+IT2 &::= (\text{``relax'', \hspace{4pt}} \quad tag : ER, \quad catch : ER) \\
+FR &::= fun : ER
+\end{align*}
+
+Onde IT e IT2 significam Item e $ER$ significa Expressão Regular.\\
+Os campos $pal$, $tag$ e $catch$ são expressões regulares com o significado de palavra, etiqueta e capturar, respetivamente.\\
+
+Com estas expressões regulares, podemos contruir expressões simples, onde o Bot irá compilar em expressões regulares ordinais com todas as propriedades definidas.
+
+\subsection{Função verifica}
+
+\hspace{11pt} No momento em que o utilizador introduz uma frase, o Bot terá de verificar se a frase introduzida tem correspondência. É nesse momento que a função verifica atua.
+
+$$
+verifica(frase, EL) \mapsto (id \hookrightarrow val) \quad | \quad \bot
+$$
+
+Esta função aceita uma frase e uma expressão regular, e devolve um resultado de dois possíveis: um dicionário com o id e valor das expressões que se captaram; ou dá vazio quando a expressão não corresponde à frase.
+
+
+\subsection{Função executa}
+
+\hspace{11pt} Esta função é a função mostra o funcionamente do Bot.
+
+\begin{align*}
+&executa(DEF_{\text{Bot}}, str) && \\
+& \quad for(antecedente, \text{reação} \in DEF_{\text{Bot}}) && \\
+& \qquad v = verifica(str, antecedente) && \\
+& \qquad r1 = sortear(\text{reação}) && \\
+& \qquad r1(v) &&
+\end{align*}
+
+
+\section{Modelo V2}
+
+\hspace{11pt} Após uma análise ao modelo anterior, foram feitas algumas alterações para simplificar a representação e implementação do modelo. Segue, então, abaixo o novo modelo linguístico:
+
+\begin{align*}
+ERL &::= EL^* \\
+EL &::= EL \quad \text{``/''} \quad IT \quad ?^* \\
+ER &::= IT \quad | \quad (\backslash w = IT) \\
+IT &::= \$ \backslash w \quad | \quad \backslash w
+\end{align*}
+
+Onde,
+\begin{align*}
+ER &\leftarrow \text{Expressão Regular}\\
+IT &\leftarrow \text{Item}\\
+\backslash w &\leftarrow [a-zA-Z0-9]^* \\
+ERL &\leftarrow \text{Expressão Regular Linguística}\\
+.^* &\leftarrow \backslash w^*
+\end{align*}
+
+Explicação:
+\begin{itemize}
+\item $.^* / .^*$ : significa que podemos ter qualquer coisa de um tipo qualquer;
+\item $. ^* / \$verbo$ : significa que podemos ter qualquer coisa de um tipo chamado $verbo$;
+\item $(lugar=.^*) / \$cidades$ : significa que podemos ter qualquer coisa, que vai ser guardada numa variável chamada de $lugar$, captura de variáveis, do tipo cidades;
+\item  $.^* / .^* ?$ : significa que podemos ter ou nao qualquer coisa de um tipo qualquer.\\
+\end{itemize}
+
+Estes tipos, estão definidos num mapa de subtituição que é utilizado pelo compilador do Modelo Linguístico.\\
+
+Um exemplo de uma expressão deste modelo é:
+\begin{equation}
+.^* /  pronome\_geral \quad  .^* /  verbo\_geral \quad (name=.^*) / nome\_proprio\_geral \quad  ? / Fit ?
+\end{equation}
+
+Nesta expressão fazemos a correspondência de um pronome qualquer seguindo um verbo qualquer, onde de seguida capturámos um nome próprio para a variável $name$ e podemos ter ou não o sinal de pontuação $?$
+
+\section{Arquitetura}
+
+\hspace{11pt} 
+
+\subsection{FreeLing}
+
+\hspace{11pt} FreeLing é uma biblioteca escrita em C++ que analisa frases de linguagens naturais morfossintáticamente. Com esta biblioteca, é possível analisar qualquer frase e obter uma análise com grande probabilidade de estar correta, pois é utilizado um modelo de Machine Learning que foi treinado com o $Bosque$ da $Linguateca$.
+
+Este $Bosque$ contém milhares de frases analisadas por Linguístas,  que o torna um excelente conjunto de treino para qualquer modelo de análise morfossintática.
+
+\subsubsection{Servidor}
+
+\hspace{11pt} Devido ao facto do modelo de análise do $FreeLing$ demorar bastante tempo a ser construído, implementou-se um pequeno servidor que tem como objetivo gerar todas as variáveis necessárias para o funcionamento do $FreeLing$ e fornecer também ao utilizador uma consola para gestão e teste rápido das funcionalidades do servidor.
+
+\subsubsection{Cliente}
+
+\hspace{11pt} Cada instância que precise de utilizar recursos do $FreeLing$, utilizam-se $sockets$ para se ligar ao servidor e utilizar o protocolo $JSON$ para enviar e receber informação.
+
+\subsubsection{Wrapper}
+
+\hspace{11pt} 
+
+\subsection{Main}
+
+\subsection{Ações}
+
+\subsection{Estado}
+
+\hspace{11pt} POR FAZER
+
+\subsection{Base de Dados}
+
+\subsubsection{Frases e ações}
+
+\subsubsection{Palavras-chaves}
+
+\subsubsection{Utilizadores}
+
+\subsection{Configurações}
+
+\subsection{Expressões Regulares}
+
+\subsection{Machine Learning}
+
+\subsection{\textit{Google Maps} Wrapper}
+
+\subsection{\textit{Wikipedia} Wrapper}
+
+\end{document}

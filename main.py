@@ -49,7 +49,7 @@ def main(args):
         first_conversation()
         try:
             while True:
-                s = input(current_user+": ")
+                s = input(current_user + ": ")
                 if s == "sair":
                     break
                 else:
@@ -73,10 +73,10 @@ def first_conversation():
     if n != "":
         if users_db.check_user(n):
             print("Check user True")
-            print("Bem-vindo de volta "+ n +".")
+            print("Bem-vindo de volta " + n + ".")
         else:
             print("Check user False")
-            print("Bem-vindo "+ n +", eu sou um Bot :)")
+            print("Bem-vindo " + n + ", eu sou um Bot :)")
             users_db.add_user(n)
         current_user = n
     else:
@@ -100,6 +100,21 @@ def substitui_por_originais(res, tagged, frase):
         res[key] = d
     return res
 
+
+'''
+TODO
+
+Criar o classificador
+
+Modificar a chamada de ações para que seja feita através de uma função que utilize o classificador
+
+Armazenar as conversas com os utilizadores na BD
+
+Criar um estado de sistema que seja atualizado a cada processamento de um pedido
+
+
+
+'''
 
 def f(s):
     # Mudado para o novo modelo
@@ -136,6 +151,7 @@ def f(s):
                 return call_func(Regexs_Backup[key]['action'], res_back[key])
             else:
                 return 'Não consegui entender...'
+
 
 if __name__ == '__main__':
     main(sys.argv)

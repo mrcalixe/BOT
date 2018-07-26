@@ -18,11 +18,11 @@ Regexs_Especiais = {
 }
 
 mapa_acoes = {
-    'pergunta_lugar'      : 'procura_lugar',
-    'pergunta_pessoa'     : 'pergunta_pessoa',
-    'intro'               : 'bem_vindo',
-    'apresentacao_pessoa' : 'bem_vindo',
-    'outro'               : 'adeus'
+    'pergunta_lugar'      : ['procura_lugar'],
+    'pergunta_pessoa'     : ['pergunta_pessoa'],
+    'intro'               : ['bem_vindo'],
+    'apresentacao_pessoa' : ['bem_vindo'],
+    'outro'               : ['adeus']
 }
 
 mapa_substituicao = {

@@ -64,7 +64,6 @@ def generate_Nodes_Edges(Tree, Nodos, Arestas):
 
 '''
 Dicionário com a Árvore de Dependências e nodos com as respetivas funções
- 
 '''
 
 
@@ -81,7 +80,9 @@ def extract(analysis, view=True):
     dep_tree['tree'] = tree
 
 
-    for n in nodes: dot.node(n)
+    for n in nodes:
+        dot.node(n)
+
     for (a, b, c) in edges:
         dot.edge(a, b, label=c)
     dot.render('dot_out.gv', view=view)

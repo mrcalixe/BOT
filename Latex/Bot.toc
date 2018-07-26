@@ -1,0 +1,26 @@
+\babel@toc {portuguese}{}
+\contentsline {section}{\numberline {1}Resumo}{2}
+\contentsline {section}{\numberline {2}Introdu\IeC {\c c}\IeC {\~a}o}{2}
+\contentsline {subsection}{\numberline {2.1}Objetivos}{2}
+\contentsline {section}{\numberline {3}Descri\IeC {\c c}\IeC {\~a}o abstrata do modelo de execu\IeC {\c c}\IeC {\~a}o}{2}
+\contentsline {subsection}{\numberline {3.1}Express\IeC {\~o}es Regulares Lingu\IeC {\'\i }sticas}{3}
+\contentsline {subsection}{\numberline {3.2}Fun\IeC {\c c}\IeC {\~a}o verifica}{3}
+\contentsline {subsection}{\numberline {3.3}Fun\IeC {\c c}\IeC {\~a}o executa}{3}
+\contentsline {section}{\numberline {4}Modelo V2}{4}
+\contentsline {section}{\numberline {5}Arquitetura}{5}
+\contentsline {subsection}{\numberline {5.1}FreeLing}{5}
+\contentsline {subsubsection}{\numberline {5.1.1}Servidor}{5}
+\contentsline {subsubsection}{\numberline {5.1.2}Cliente}{5}
+\contentsline {subsubsection}{\numberline {5.1.3}Wrapper}{5}
+\contentsline {subsection}{\numberline {5.2}Main}{5}
+\contentsline {subsection}{\numberline {5.3}A\IeC {\c c}\IeC {\~o}es}{5}
+\contentsline {subsection}{\numberline {5.4}Estado}{5}
+\contentsline {subsection}{\numberline {5.5}Base de Dados}{6}
+\contentsline {subsubsection}{\numberline {5.5.1}Frases e a\IeC {\c c}\IeC {\~o}es}{6}
+\contentsline {subsubsection}{\numberline {5.5.2}Palavras-chaves}{6}
+\contentsline {subsubsection}{\numberline {5.5.3}Utilizadores}{6}
+\contentsline {subsection}{\numberline {5.6}Configura\IeC {\c c}\IeC {\~o}es}{6}
+\contentsline {subsection}{\numberline {5.7}Express\IeC {\~o}es Regulares}{6}
+\contentsline {subsection}{\numberline {5.8}Machine Learning}{6}
+\contentsline {subsection}{\numberline {5.9}\textit {Google Maps} Wrapper}{6}
+\contentsline {subsection}{\numberline {5.10}\textit {Wikipedia} Wrapper}{6}
