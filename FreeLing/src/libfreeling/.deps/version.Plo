@@ -1,8 +1,0 @@
-version.lo: version.cc /usr/include/stdc-predef.h \
- ../../src/include/freeling/version.h /usr/include/boost/version.hpp
-
-/usr/include/stdc-predef.h:
-
-../../src/include/freeling/version.h:
-
-/usr/include/boost/version.hpp:
